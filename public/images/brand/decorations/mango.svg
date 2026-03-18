@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 70" width="50" height="70">
+  <!-- Mango body -->
+  <path d="M25 8 C10 8 4 22 5 38 C6 54 15 65 25 65 C35 65 44 54 45 38 C46 22 40 8 25 8 Z" fill="#1B7A3D"/>
+  <!-- Mango stem -->
+  <line x1="25" y1="8" x2="28" y2="0" stroke="#6D4C41" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Leaf -->
+  <ellipse cx="34" cy="4" rx="10" ry="4" fill="#1B7A3D" transform="rotate(-30 34 4)"/>
+</svg>

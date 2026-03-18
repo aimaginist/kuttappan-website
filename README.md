@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kuttappan — Official Website
+
+> **Big Plans. Bigger Fails. Biggest Heart.**
+
+The official brand website for **Kuttappan**, a 3D animated kids series set in a 1990s Kerala village.
+
+---
+
+## Tech Stack
+
+| Layer      | Technology |
+|------------|-----------|
+| Framework  | Next.js 16+ (App Router) |
+| Language   | TypeScript |
+| Styling    | Tailwind CSS v4 |
+| Animation  | Framer Motion + CSS |
+| Images     | next/image + sharp (processing) |
+| Fonts      | Fredoka + Nunito (Google Fonts) |
+| Deployment | Vercel |
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
+
+# Production build
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | Page |
+|-------|------|
+| `/` | Homepage |
+| `/characters` | Meet the Gang |
+| `/world` | The Village |
+| `/episodes` | Adventures |
+| `/about` | Our Story |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Adding YouTube Episodes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+When episodes go live, open `src/data/episodes.ts` and add the YouTube video ID:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```ts
+{ number: 1, youtubeId: "dQw4w9WgXcQ", ... }
+```
 
-## Deploy on Vercel
+The episode card automatically switches from "Coming Soon" to a "Watch Now" button with modal player.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Brand
+
+- **Primary color:** Kerala Green `#1B7A3D`
+- **Accent:** Mango Yellow `#F5A623`
+- **Background:** Warm Cream `#FFF8E7`
+- **Fonts:** Fredoka (display) + Nunito (body)
+- **Tagline:** *Big Plans. Bigger Fails. Biggest Heart.*
+
+---
+
+## Deployment
+
+1. Push to GitHub
+2. Import repo at [vercel.com/new](https://vercel.com/new)
+3. Framework: Next.js (auto-detected) → Deploy
+4. Add `kuttappan.in` in Vercel → Settings → Domains
+5. DNS: A record `76.76.21.21` + CNAME `www` → `cname.vercel-dns.com`
+
+---
+
+**AImaginist Studio** · [aimaginist.studio](https://aimaginist.studio)
+
+*Human-directed, AI-powered animation.*

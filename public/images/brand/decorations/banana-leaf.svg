@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 200" width="120" height="200">
+  <path d="M60 200 C20 150 5 90 15 30 C30 10 50 5 60 5 C70 5 90 10 105 30 C115 90 100 150 60 200 Z" fill="#1B7A3D" opacity="0.8"/>
+  <!-- Midrib -->
+  <path d="M60 200 C55 140 52 80 60 5" stroke="#156130" stroke-width="3" fill="none"/>
+  <!-- Veins -->
+  <line x1="60" y1="60"  x2="25" y2="50"  stroke="#156130" stroke-width="1.5" opacity="0.6"/>
+  <line x1="60" y1="90"  x2="20" y2="82"  stroke="#156130" stroke-width="1.5" opacity="0.6"/>
+  <line x1="60" y1="120" x2="22" y2="115" stroke="#156130" stroke-width="1.5" opacity="0.6"/>
+  <line x1="60" y1="60"  x2="95" y2="50"  stroke="#156130" stroke-width="1.5" opacity="0.6"/>
+  <line x1="60" y1="90"  x2="100" y2="82" stroke="#156130" stroke-width="1.5" opacity="0.6"/>
+  <line x1="60" y1="120" x2="98" y2="115" stroke="#156130" stroke-width="1.5" opacity="0.6"/>
+</svg>
