@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuttappan – The Kerala Boy Who Makes Beautiful Messes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;800&family=Nunito:wght@400;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --laterite: #C0392B;
+    --teal: #1A7A6E;
+    --gold: #E8A020;
+    --cream: #F5EDD6;
+    --green: #4A7C59;
+    --sky: #2C3E6B;
+    --pink: #D45A8A;
+    --earth: #3B1E0C;
+    --font-display: 'Baloo Bhaijaan 2', cursive;
+    --font-body: 'Nunito', sans-serif;
+    --font-accent: 'Caveat', cursive;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--earth);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--sky);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .nav-brand { display: flex; flex-direction: column; line-height: 1; }
+  .nav-brand .en {
+    font-family: var(--font-display); font-weight: 800;
+    color: var(--gold); font-size: 1.5rem; letter-spacing: 1px;
+  }
+  .nav-brand .ml {
+    font-family: var(--font-display); color: rgba(255,255,255,0.6); font-size: 0.75rem;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--earth); border: none;
+    font-family: var(--font-body); font-weight: 700; font-size: 0.85rem;
+    padding: 0.5rem 1.25rem; border-radius: 50px; cursor: pointer;
+    text-decoration: none; transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--laterite); color: white; transform: scale(1.04); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .nav-hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--laterite) 0%, #8B2020 40%, var(--sky) 100%);
+    display: flex; align-items: center;
+    padding: 100px 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .frame-image {
+    width:100%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; right: -50px; bottom: 0;
+    width: 400px; height: 500px;
+    background: rgba(0,0,0,0.1);
+    clip-path: polygon(50% 0%, 45% 20%, 60% 15%, 48% 35%, 65% 28%, 50% 50%, 60% 45%, 52% 65%, 58% 60%, 53% 80%, 55% 100%, 45% 100%, 47% 80%, 42% 60%, 48% 65%, 40% 45%, 50% 50%, 35% 28%, 52% 35%, 40% 15%, 55% 20%);
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    position: relative; z-index: 1; width: 100%;
+  }
+  .hero-label {
+    font-family: var(--font-accent); font-size: 1.1rem;
+    color: var(--gold); margin-bottom: 0.5rem;
+    display: block;
+  }
+  .hero-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: white; line-height: 1; letter-spacing: -1px;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+  }
+  .hero-title-ml {
+    font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: rgba(255,255,255,0.6); display: block; margin-top: 0.25rem;
+    font-weight: 600;
+  }
+  .hero-tagline {
+    font-family: var(--font-body); font-weight: 700; font-size: 1.15rem;
+    color: var(--gold); margin: 1.25rem 0 0.75rem;
+    font-style: italic;
+  }
+  .hero-desc {
+    color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.7;
+    max-width: 480px;
+  }
+  .hero-btns {
+    display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--earth);
+    font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+    padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none;
+    border: none; cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary:hover { background: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .btn-outline {
+    background: transparent; color: white;
+    font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+    padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  .hero-note {
+    font-family: var(--font-accent); color: rgba(255,255,255,0.5);
+    font-size: 0.95rem; margin-top: 1rem;
+  }
+  .hero-visual {
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-char-box {
+    width: 320px; height: 420px; border-radius: 24px;
+    background: linear-gradient(160deg, var(--teal), #0d5a50);
+    border: 3px solid rgba(255,255,255,0.15);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .hero-char-box::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+    background: rgba(0,0,0,0.15); border-radius: 0 0 22px 22px;
+  }
+  .hero-char-icon {
+    font-size: 5rem; margin-bottom: 0rem; position: relative; z-index: 1;
+  }
+  .hero-char-label {
+    font-family: var(--font-display); font-weight: 800; color: white;
+    font-size: 1.5rem; position: relative; z-index: 1;
+  }
+  .hero-char-sub {
+    font-family: var(--font-accent); color: rgba(255,255,255,0.7);
+    font-size: 1rem; position: relative; z-index: 1; margin-top: 0.25rem;
+  }
+  .wave-divider {
+    width: 100%; overflow: hidden; line-height: 0;
+    background: var(--cream);
+  }
+  .wave-divider svg { display: block; }
+
+  /* ABOUT */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-family: var(--font-accent); font-size: 1.2rem;
+    color: var(--gold); display: block; margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--laterite); line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .section-title.light { color: white; }
+  .about-text {
+    font-size: 1.1rem; line-height: 1.9; color: var(--earth);
+    max-width: 720px; margin-bottom: 3rem;
+  }
+  .stat-tiles {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .stat-tile {
+    background: var(--laterite); border-radius: 20px;
+    padding: 2rem 1.5rem; text-align: center;
+    transition: transform 0.2s;
+  }
+  .stat-tile:hover { transform: translateY(-4px); }
+  .stat-tile .num {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 2rem; color: var(--gold); display: block;
+  }
+  .stat-tile .lbl {
+    font-family: var(--font-body); color: rgba(255,255,255,0.8);
+    font-size: 0.9rem; margin-top: 0.25rem;
+  }
+
+  /* CHARACTERS */
+  .characters { background: var(--green); }
+  .char-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
+    margin-top: 3rem;
+  }
+  .char-card {
+    background: var(--cream); border-radius: 24px;
+    overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .char-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+  .char-portrait {
+    height: 200px; display: flex; align-items: center; justify-content: center;
+    font-size: 4rem; position: relative; overflow: hidden;
+  }
+  .char-portrait::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.2));
+  }
+  .char-body { padding: 1.5rem; }
+  .char-badge {
+    display: inline-block;
+    font-family: var(--font-accent); font-size: 0.85rem;
+    padding: 0.3rem 0.9rem; border-radius: 50px;
+    margin-bottom: 0.75rem; font-weight: 700;
+  }
+  .char-name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.6rem; color: var(--earth);
+  }
+  .char-name-ml {
+    font-family: var(--font-display); font-size: 1rem;
+    color: rgba(59,30,12,0.5); display: block; margin-bottom: 0.25rem;
+  }
+  .char-role {
+    font-family: var(--font-accent); color: var(--teal);
+    font-size: 0.95rem; margin-bottom: 0.75rem; display: block;
+  }
+  .char-desc {
+    font-size: 0.95rem; line-height: 1.7; color: var(--earth);
+    margin-bottom: 1rem;
+  }
+  .char-quote {
+    font-family: var(--font-accent); font-size: 1rem;
+    color: var(--teal); background: rgba(26,122,110,0.08);
+    border-left: 3px solid var(--teal); border-radius: 0 12px 12px 0;
+    padding: 0.75rem 1rem; line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* EPISODES */
+  .episodes { background: var(--sky); }
+  .episodes .section-title { color: white; }
+  .ep-sub {
+    color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.7;
+    max-width: 600px; margin-bottom: 3rem;
+  }
+  .ep-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .ep-card {
+    background: var(--cream); border-radius: 20px; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .ep-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+  .ep-thumb {
+    height: 140px; display: flex; align-items: center; justify-content: center;
+    position: relative; font-size: 3rem;
+  }
+  .ep-num {
+    position: absolute; top: 1rem; left: 1rem;
+    font-family: var(--font-accent); font-weight: 700; font-size: 0.9rem;
+    background: rgba(0,0,0,0.35); color: white;
+    padding: 0.25rem 0.75rem; border-radius: 50px;
+  }
+  .ep-body { padding: 1.25rem; }
+  .ep-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.2rem; color: var(--earth); margin-bottom: 0.5rem;
+  }
+  .ep-desc { font-size: 0.88rem; line-height: 1.6; color: rgba(59,30,12,0.75); margin-bottom: 1rem; }
+  .ep-btn {
+    font-family: var(--font-accent); font-weight: 700; font-size: 0.95rem;
+    color: var(--laterite); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    transition: color 0.2s;
+  }
+  .ep-btn:hover { color: var(--teal); }
+
+  /* WORLD */
+  .world { background: var(--cream); }
+  .loc-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .loc-card {
+    background: white; border-radius: 20px; padding: 1.75rem 1.5rem;
+    border: 2px solid rgba(192,57,43,0.1);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .loc-card:hover {
+    transform: translateY(-4px); border-color: var(--laterite);
+    box-shadow: 0 8px 32px rgba(192,57,43,0.15);
+  }
+  .loc-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+  .loc-name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 1.1rem; color: var(--earth);
+  }
+  .loc-ml {
+    font-family: var(--font-display); font-size: 0.85rem;
+    color: rgba(59,30,12,0.45); display: block; margin-bottom: 0.5rem;
+  }
+  .loc-desc { font-size: 0.9rem; line-height: 1.6; color: rgba(59,30,12,0.7); }
+
+  /* STUDIO */
+  .studio { background: var(--earth); }
+  .studio-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .studio-quote {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--gold); line-height: 1.3;
+    border-left: 4px solid var(--laterite);
+    padding-left: 1.5rem;
+  }
+  .studio-text { color: rgba(255,255,255,0.8); line-height: 1.9; font-size: 1rem; }
+  .studio-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+  }
+  .studio-stat {
+    background: rgba(255,255,255,0.07); border-radius: 16px;
+    padding: 1.25rem; border: 1px solid rgba(255,255,255,0.1);
+  }
+  .studio-stat .s-val {
+    font-family: var(--font-display); font-weight: 800; font-size: 1.1rem;
+    color: var(--gold); display: block;
+  }
+  .studio-stat .s-lbl {
+    font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem;
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    background: var(--laterite); padding: 5rem 2rem; text-align: center;
+  }
+  .cta-band h2 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: white; margin-bottom: 0.75rem;
+  }
+  .cta-band p {
+    color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 2rem;
+  }
+  .cta-band .btn-primary { font-size: 1.1rem; padding: 1rem 2.5rem; }
+  .cta-note {
+    font-family: var(--font-accent); color: rgba(255,255,255,0.5);
+    font-size: 1rem; margin-top: 1rem; display: block;
+  }
+
+  /* FOOTER */
+  footer { background: var(--sky); padding: 4rem 2rem 0; }
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand .fb-name {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 2rem; color: var(--gold);
+  }
+  .footer-brand .fb-ml {
+    font-family: var(--font-display); font-size: 1rem;
+    color: rgba(255,255,255,0.45); display: block;
+  }
+  .footer-brand .fb-desc {
+    color: rgba(255,255,255,0.55); font-size: 0.9rem;
+    line-height: 1.6; margin-top: 0.75rem;
+  }
+  .footer-brand .fb-studio {
+    font-family: var(--font-accent); color: rgba(255,255,255,0.3);
+    font-size: 0.9rem; margin-top: 0.5rem; display: block;
+  }
+  .footer-col h4 {
+    font-family: var(--font-display); font-weight: 800;
+    color: var(--gold); font-size: 1.1rem; margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.65); text-decoration: none;
+    font-size: 0.9rem; transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-col p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+  .footer-cta {
+    display: inline-block; background: var(--gold); color: var(--earth);
+    font-family: var(--font-body); font-weight: 700; font-size: 0.9rem;
+    padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .footer-cta:hover { background: white; transform: translateY(-2px); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    padding: 1.5rem 0; text-align: center;
+    color: rgba(255,255,255,0.3); font-size: 0.8rem; line-height: 1.8;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-visual { animation: fadeUp 0.9s 0.3s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .hero-desc { margin: 0 auto; }
+    .hero-btns { justify-content: center; }
+    .hero-visual { order: -1; }
+    .hero-char-box { width: 240px; height: 300px; }
+    .char-grid { grid-template-columns: 1fr; }
+    .ep-grid { grid-template-columns: 1fr 1fr; }
+    .loc-grid { grid-template-columns: 1fr 1fr; }
+    .studio-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .stat-tiles { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .ep-grid { grid-template-columns: 1fr; }
+    .loc-grid { grid-template-columns: 1fr; }
+    .studio-stats { grid-template-columns: 1fr; }
+    nav { padding: 0 1rem; }
+    section { padding: 4rem 1rem; }
+  }
+
+  nav.open .nav-links {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: var(--sky); padding: 1rem 2rem;
+    gap: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-brand">
+    <span class="en">KUTTAPPAN</span>
+    <span class="ml">കുട്ടപ്പൻ</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#characters">Characters</a></li>
+    <li><a href="#episodes">Episodes</a></li>
+    <li><a href="#world">World</a></li>
+    <li><a href="#studio">Studio</a></li>
+  </ul>
+  <a class="nav-cta" href="https://beacons.ai/kuttappan.official" target="_blank">Follow Us →</a>
+  <div class="nav-hamburger" onclick="document.getElementById('navbar').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-label">✦ AImaginist Studio Presents</span>
+      <h1 class="hero-title">
+        KUTTAPPAN
+        <span class="hero-title-ml">കുട്ടപ്പൻ</span>
+      </h1>
+      <p class="hero-tagline">"Chaos, Heart, and the Kerala Boy Who Makes Beautiful Messes."</p>
+      <p class="hero-desc">
+        A 3D CGI animated comedy series set in the magical village of Thottumkara,
+        1990s Kerala. Where every plan is spectacular. Every failure is more spectacular.
+        And from every chaos — something beautiful emerges.
+      </p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="https://beacons.ai/kuttappan.official" target="_blank">▶ Watch Now</a>
+        <a class="btn-outline" href="#characters">Meet the Characters</a>
+      </div>
+      <p class="hero-note">✦ Malayalam Original · English Subtitled</p>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-char-box">
+        <div class="hero-char-icon"><img class="frame-image" src="./kuttappan-yellow.png" /></div>
+        <div class="hero-char-label">Kuttappan</div>
+        <div class="hero-char-sub">കുട്ടപ്പൻ · 8 years old</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider" style="background: linear-gradient(135deg, var(--laterite), var(--sky));">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#F5EDD6"/>
+  </svg>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="background: var(--cream);">
+  <div class="section-inner">
+    <span class="section-label">✦ The Story</span>
+    <h2 class="section-title">A Village. A Boy.<br>Infinite Plans.</h2>
+    <p class="about-text">
+      In the global landscape of children's animation, there are hundreds of shows for children everywhere —
+      but almost nothing for a child growing up in Kerala. <strong>Kuttappan changes that.</strong>
+      <br><br>
+      Set in the fictional village of Thottumkara on a backwater canal, Kuttappan follows an 8-year-old boy
+      whose plans are magnificent, whose failures are spectacular, and whose heart is the biggest thing in
+      the village. Think Pixar's visual ambition meeting an Ammachi's kitchen — warm, funny, and
+      unmistakably Kerala.
+    </p>
+    <div class="stat-tiles">
+      <div class="stat-tile">
+        <span class="num">8</span>
+        <span class="lbl">Years Old — The Boy With The Plan</span>
+      </div>
+      <div class="stat-tile">
+        <span class="num">1990s</span>
+        <span class="lbl">Kerala · Village of Thottumkara</span>
+      </div>
+      <div class="stat-tile">
+        <span class="num">AI ✦</span>
+        <span class="lbl">Human Heart. AI Instrument.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTERS -->
+<section id="characters" class="characters">
+  <div class="section-inner">
+    <span class="section-label" style="color: var(--gold);">✦ The Cast</span>
+    <h2 class="section-title light">Meet the People<br>of Thottumkara</h2>
+    <div class="char-grid">
+
+      <!-- KUTTAPPAN -->
+      <div class="char-card">
+        <div class="char-portrait" style="background: linear-gradient(135deg, var(--laterite), #8B2020);">
+          <img class="frame-image" src="./kuttappan-fear.png">
+        </div>
+        <div class="char-body">
+          <span class="char-badge" style="background: var(--gold); color: var(--earth);">⭐ HERO</span>
+          <div class="char-name">Kuttappan</div>
+          <span class="char-name-ml">കുട്ടപ്പൻ</span>
+          <span class="char-role">The Planner · The Dreamer · 8 years old</span>
+          <p class="char-desc">
+            Overconfident in his plans. Magnificent in his disasters. Kuttappan sees every
+            problem as an adventure waiting to happen — and every failure as a better story
+            than success. Cream shirt, curly afro, always barefoot.
+          </p>
+          <div class="char-quote">
+            "The plan is simple. All we need is the goat, Shambhu's umbrella,
+            and exactly fourteen coconut shells."
+          </div>
+        </div>
+      </div>
+
+      <!-- AMMACHI -->
+      <div class="char-card">
+        <div class="char-portrait" style="background: linear-gradient(135deg, var(--pink), #a04070);">
+          <img class="frame-image" src="./grandma.jpeg">
+        </div>
+        <div class="char-body">
+          <span class="char-badge" style="background: var(--pink); color: white;">🏠 MORAL CENTER</span>
+          <div class="char-name">Ammachi</div>
+          <span class="char-name-ml">അമ്മച്ചി</span>
+          <span class="char-role">The Grandmother · The Wise One · Always Right</span>
+          <p class="char-desc">
+            Compact, formidable, and the funniest person in Thottumkara. She doesn't
+            raise her voice — she lowers it. She has a proverb for every disaster.
+            And she always knew it was coming.
+          </p>
+          <div class="char-quote">
+            "I am not saying the plan is bad. I am saying that the last time you made
+            this face, we had to apologize to four neighbors and one rooster."
+          </div>
+        </div>
+      </div>
+
+      <!-- SHAMBHU -->
+      <div class="char-card">
+        <div class="char-portrait" style="background: linear-gradient(135deg, var(--teal), #0d5a50);">
+          <img class="frame-image" src="./shambhu.png">
+        </div>
+        <div class="char-body">
+          <span class="char-badge" style="background: var(--teal); color: white;">💚 BEST FRIEND</span>
+          <div class="char-name">Shambhu</div>
+          <span class="char-name-ml">ശംഭു</span>
+          <span class="char-role">The Heart · The Conscience · Always Loyal</span>
+          <p class="char-desc">
+            He sees every disaster coming. He goes along anyway. Shambhu is the most
+            emotionally intelligent boy in Thottumkara — green t-shirt, red thread bracelet,
+            messy hair, and an endless, loyal heart.
+          </p>
+          <div class="char-quote">
+            "I'm with you. I'm always with you. I just want to note, for the record,
+            that I said this."
+          </div>
+        </div>
+      </div>
+
+      <!-- PAKRU -->
+      <div class="char-card">
+        <div class="char-portrait" style="background: linear-gradient(135deg, #E8601A, #c04810);">
+          <img class="frame-image" src="./pakru.jpeg">
+        </div>
+        <div class="char-body">
+          <span class="char-badge" style="background: var(--gold); color: var(--earth);">😏 FRENEMY</span>
+          <div class="char-name">Pakru</div>
+          <span class="char-name-ml">പക്രു</span>
+          <span class="char-role">The Rival · The Snacker · Secretly Wants In</span>
+          <p class="char-desc">
+            The richest kid in Thottumkara. Always eating. His family has a color television
+            AND a scooter. He pretends not to want to join Kuttappan's plans.
+            He always ends up in them.
+          </p>
+          <div class="char-quote">
+            "I could join you. If you want. I don't want to.
+            I'm just saying I could."
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EPISODES -->
+<section id="episodes" class="episodes">
+  <div class="section-inner">
+    <span class="section-label">✦ Season 1</span>
+    <h2 class="section-title" style="color: white;">Kuttappan's Plans<br>Begin Here</h2>
+    <p class="ep-sub">
+      Every plan is spectacular. Every failure is more spectacular.
+      And from every chaos — something beautiful.
+    </p>
+    <div class="ep-grid">
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--gold), var(--green));">
+          🥭
+          <span class="ep-num">Episode 01</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">The Mango Shot</div>
+          <p class="ep-desc">Kuttappan devises the perfect plan to get the highest mango from the neighbour's tree without anyone knowing. Thottumkara will never look at mangoes the same way again.</p>
+          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
+        </div>
+      </div>
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--laterite), var(--sky));">
+          🥁
+          <span class="ep-num">Episode 02</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">Chendamelom</div>
+          <p class="ep-desc">When the village temple festival needs a chenda drummer and Kuttappan volunteers without knowing how to play — the rhythm of disaster begins.</p>
+          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
+        </div>
+      </div>
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--green), var(--gold));">
+          🐔
+          <span class="ep-num">Episode 03</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">Chicken Chaos</div>
+          <p class="ep-desc">One escaped chicken. Three boys. An entire village mobilized. Kuttappan's simplest plan yet somehow becomes his most spectacular catastrophe.</p>
+          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
+        </div>
+      </div>
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--teal), var(--green));">
+          🤝
+          <span class="ep-num">Episode 04</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">Team Work</div>
+          <p class="ep-desc">Kuttappan discovers that having a team doesn't mean everyone follows the plan. Especially when the team includes Shambhu's doubts and Pakru's snacks.</p>
+          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
+        </div>
+      </div>
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--sky), var(--pink));">
+          🚀
+          <span class="ep-num">Episode 05</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">Brave Mission</div>
+          <p class="ep-desc">The most daring plan Kuttappan has ever announced. The whole village holds its breath. Even Ammachi pauses her cooking. This time — it might actually work.</p>
+          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
+        </div>
+      </div>
+
+      <div class="ep-card" style="background: var(--sky); border: 2px dashed rgba(255,255,255,0.2);">
+        <div class="ep-thumb" style="background: rgba(255,255,255,0.05);">
+          ✨
+          <span class="ep-num" style="background: rgba(255,255,255,0.1);">Coming Soon</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title" style="color: white;">More Adventures<br>Incoming...</div>
+          <p class="ep-desc" style="color: rgba(255,255,255,0.6);">Thottumkara has more plans, more chaos, and more beautiful messes in store. Follow along so you don't miss a single disaster.</p>
+          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank" style="color: var(--gold);">Follow for Updates ▶</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WAVE UP -->
+<div style="background: var(--sky);">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F5EDD6"/>
+  </svg>
+</div>
+
+<!-- WORLD -->
+<section id="world" class="world">
+  <div class="section-inner">
+    <span class="section-label">✦ The World</span>
+    <h2 class="section-title">Welcome to<br>Thottumkara</h2>
+    <p style="font-family: var(--font-display); font-size: 1.1rem; color: rgba(59,30,12,0.45); margin-bottom: 0.5rem;">തൊട്ടുംകര</p>
+    <p style="color: var(--earth); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-bottom: 0;">
+      A fictional village on a backwater canal in central Kerala. Population: about 400 families.
+      Adventures: unlimited. The world as vivid, funny, and emotionally generous as any fictional
+      universe in the history of animation.
+    </p>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <span class="loc-icon">🏠</span>
+        <div class="loc-name">Ammachi's House</div>
+        <span class="loc-ml">വീട്</span>
+        <p class="loc-desc">The laterite-stone house where every plan is hatched on the thinnai steps. The kitchen is Ammachi's territory — absolutely.</p>
+      </div>
+      <div class="loc-card">
+        <span class="loc-icon">🌊</span>
+        <div class="loc-name">The Backwater Canal</div>
+        <span class="loc-ml">കായൽ</span>
+        <p class="loc-desc">Luminously teal at morning. Dark and mysterious at dusk. Always beautiful. The spine of Thottumkara and the call of the world beyond.</p>
+      </div>
+      <div class="loc-card">
+        <span class="loc-icon">🏫</span>
+        <div class="loc-name">Primary School</div>
+        <span class="loc-ml">പഠശാല</span>
+        <p class="loc-desc">Where Krishnan Master's magnificent moustache and Kuttappan's magnificent plans have their daily confrontation.</p>
+      </div>
+      <div class="loc-card">
+        <span class="loc-icon">🥭</span>
+        <div class="loc-name">Mango Grove</div>
+        <span class="loc-ml">മാവിന്തൊപ്പ്</span>
+        <p class="loc-desc">Seven trees. Disputed ownership since before Kuttappan's father was born. The best mangoes in the district. Kuttappan's strategy room.</p>
+      </div>
+      <div class="loc-card">
+        <span class="loc-icon">🪔</span>
+        <div class="loc-name">Temple Courtyard</div>
+        <span class="loc-ml">അമ്പലപ്പറമ്പ്</span>
+        <p class="loc-desc">Where festivals happen, village news travels faster than the wind, and the sacred heartbeat of Thottumkara pulses loudest.</p>
+      </div>
+      <div class="loc-card">
+        <span class="loc-icon">🌾</span>
+        <div class="loc-name">Paddy Fields</div>
+        <span class="loc-ml">നൽപ്പാടം</span>
+        <p class="loc-desc">Floods in monsoon and turns to a luminous sky-reflecting lake. Golden in harvest. The deep, ancient rhythm of Thottumkara.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section id="studio" class="studio">
+  <div class="section-inner">
+    <div class="studio-inner">
+      <div class="studio-quote">
+        "We do not use AI to replace storytelling. We use AI to make storytelling possible."
+      </div>
+      <div>
+        <p class="studio-text">
+          AImaginist Studio is one human being with a clear vision, wielding AI tools as creative
+          instruments — building what was previously only possible with teams of hundreds.
+          <br><br>
+          Kuttappan is the first major animated IP created through human-directed AI animation.
+          The technology is the instrument. The vision is the musician. The love for Kerala is the song.
+          <br><br>
+          No AI generated that love. No AI can. But AI can help it reach the world.
+          And that is enough. That is everything.
+        </p>
+        <div class="studio-stats">
+          <div class="studio-stat">
+            <span class="s-val">100% Human</span>
+            <div class="s-lbl">Vision &amp; Creative Direction</div>
+          </div>
+          <div class="studio-stat">
+            <span class="s-val">AI-Powered</span>
+            <div class="s-lbl">Production Pipeline</div>
+          </div>
+          <div class="studio-stat">
+            <span class="s-val">Made in Kerala</span>
+            <div class="s-lbl">For the World</div>
+          </div>
+          <div class="studio-stat">
+            <span class="s-val">Pixar Quality</span>
+            <div class="s-lbl">Ammachi-Approved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Join Thottumkara</h2>
+  <p>Follow Kuttappan's adventures. Be part of the village.</p>
+  <a class="btn-primary" href="https://beacons.ai/kuttappan.official" target="_blank" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+    Follow @kuttappan.official →
+  </a>
+  <span class="cta-note">YouTube · Instagram · Facebook · All Platforms</span>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="fb-name">KUTTAPPAN</div>
+      <span class="fb-ml">കുട്ടപ്പൻ</span>
+      <p class="fb-desc">A 3D CGI Animated Comedy Series set in the magical village of Thottumkara, 1990s Kerala. Where chaos makes beautiful messes.</p>
+      <span class="fb-studio">AImaginist Studio · kuttappan.in</span>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About the Show</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#episodes">Episodes</a></li>
+        <li><a href="#world">World of Thottumkara</a></li>
+        <li><a href="#studio">AImaginist Studio</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Find Us Everywhere</h4>
+      <p>Watch, follow, and join the Thottumkara community across all platforms.</p>
+      <a class="footer-cta" href="https://beacons.ai/kuttappan.official" target="_blank">All Links →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2024 AImaginist Studio · kuttappan.in · All Rights Reserved</div>
+    <div>Made with love for Kerala. Powered by human vision and AI.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navbar').classList.remove('open');
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.char-card, .ep-card, .loc-card, .stat-tile, .studio-stat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
