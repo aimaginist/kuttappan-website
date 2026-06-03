@@ -3,7 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kuttappan — The Kerala Boy Who Makes Beautiful Messes</title>
+<title>Kuttappan | Malayalam 3D Animated Comedy from Thottumkara</title>
+<meta name="description" content="Kuttappan is a Malayalam 3D animated comedy series set in Thottumkara, a 1990s Kerala village. An 10-year-old's plans always end in beautiful disaster. Watch on YouTube." />
+<meta name="keywords" content="Kuttappan, Thottumkara, Malayalam animation, Kerala animated series, Malayalam cartoon, 3D animation Kerala, മലയാളം ആനിമേഷൻ, AImaginist Studio" />
+<link rel="canonical" href="https://kuttappan.in/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kuttappan" />
+<meta property="og:title" content="Kuttappan | A Story from Kerala. A Story for the World." />
+<meta property="og:description" content="An 10-year-old in a 1990s Kerala village whose every plan ends in beautiful disaster. Malayalam 3D animated comedy from Thottumkara." />
+<meta property="og:image" content="https://kuttappan.in/kuttappan-yellow.png" />
+<meta property="og:url" content="https://kuttappan.in/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Kuttappan | A Story from Kerala. A Story for the World." />
+<meta name="twitter:description" content="Malayalam 3D animated comedy from Thottumkara, a 1990s Kerala village." />
+<meta name="twitter:image" content="https://kuttappan.in/kuttappan-yellow.png" />
+<link rel="icon" type="image/png" href="./kuttappan-yellow.png" />
+<link rel="apple-touch-icon" href="./kuttappan-yellow.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TVSeries",
+  "name": "Kuttappan",
+  "alternateName": "കുട്ടപ്പൻ",
+  "description": "A Malayalam 3D animated comedy series set in Thottumkara, a 1990s Kerala village, following an 10-year-old whose every plan ends in beautiful disaster.",
+  "genre": ["Animation", "Comedy", "Family"],
+  "inLanguage": "ml",
+  "image": "https://kuttappan.in/kuttappan-yellow.png",
+  "url": "https://kuttappan.in/",
+  "productionCompany": {
+    "@type": "Organization",
+    "name": "AImaginist Studio",
+    "url": "https://kuttappan.in/"
+  },
+  "sameAs": [
+    "https://youtube.com/@kuttappan_ml",
+    "https://www.instagram.com/kuttappan.official/",
+    "https://www.facebook.com/profile.php?id=61573234315135"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;800&family=Nunito:wght@400;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
@@ -270,11 +308,16 @@
   }
 
   /* EPISODES */
-  .episodes { background: var(--sky); padding-bottom: 0; }
+  .episodes { background: var(--sky);}
   .episodes .section-title { color: white; }
   .ep-sub {
     color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.7;
     max-width: 600px; margin-bottom: 3rem;
+  }
+  .ep-section-title {
+    font-family: var(--font-display); font-weight: 800;
+    color: var(--gold); font-size: 1.15rem;
+    margin: 2.5rem 0 1rem;
   }
   .ep-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
@@ -300,6 +343,10 @@
     font-family: var(--font-display); font-weight: 800;
     font-size: 1.2rem; color: var(--earth); margin-bottom: 0.5rem;
   }
+  .ep-meta {
+    display: block; font-size: 0.82rem; line-height: 1.5;
+    color: rgba(59,30,12,0.52); margin-bottom: 0.75rem;
+  }
   .ep-desc { font-size: 0.88rem; line-height: 1.6; color: rgba(59,30,12,0.75); margin-bottom: 1rem; }
   .ep-btn {
     font-family: var(--font-accent); font-weight: 700; font-size: 0.95rem;
@@ -310,7 +357,7 @@
   .ep-btn:hover { color: var(--teal); }
 
   /* WORLD */
-  .world { background: var(--cream); padding-top: 0; }
+  .world { background: var(--cream); }
   .loc-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
     margin-top: 3rem;
@@ -482,6 +529,13 @@
     font-family: var(--font-accent); color: rgba(255,255,255,0.5);
     font-size: 1rem; margin-top: 1rem; display: block;
   }
+  .cta-secondary {
+    margin-top: 1rem; color: rgba(255,255,255,0.72); font-size: 0.95rem;
+  }
+  .cta-secondary a {
+    color: white; font-weight: 700; text-decoration: none;
+  }
+  .cta-secondary a:hover { color: var(--gold); }
 
   /* FOOTER */
   footer { background: var(--sky); padding: 4rem 2rem 0; }
@@ -519,6 +573,9 @@
   }
   .footer-col ul li a:hover { color: var(--gold); }
   .footer-col p { color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+  .footer-links {
+    display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start;
+  }
   .footer-cta {
     display: inline-block; background: var(--gold); color: var(--earth);
     font-family: var(--font-body); font-weight: 700; font-size: 0.9rem;
@@ -595,7 +652,7 @@
     <li><a href="#world">World</a></li>
     <li><a href="#studio">Studio</a></li>
   </ul>
-  <a class="nav-cta" href="https://beacons.ai/kuttappan.official" target="_blank">Follow Us →</a>
+  <a class="nav-cta" href="https://youtube.com/@kuttappan_ml" target="_blank">▶ Watch on YouTube</a>
   <div class="nav-hamburger" onclick="document.getElementById('navbar').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
@@ -605,19 +662,20 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <span class="hero-label">✦ AImaginist Studio Presents</span>
+      <span class="hero-label">✦ From Thottumkara, Kerala</span>
       <h1 class="hero-title">
         KUTTAPPAN
         <span class="hero-title-ml">കുട്ടപ്പൻ</span>
       </h1>
       <p class="hero-tagline">"Chaos, Heart, and the Kerala Boy Who Makes Beautiful Messes."</p>
       <p class="hero-desc">
-        A 3D CGI animated comedy series set in the magical village of Thottumkara, 
-        1990s Kerala. Where every plan is spectacular. Every failure is more spectacular. 
-        And from every chaos — something beautiful emerges.
+        A 3D animated comedy from <strong>Thottumkara</strong> — a 1990s Kerala village where every plan is spectacular,
+        every failure is <em>more</em> spectacular, and from every chaos, something beautiful emerges.
+        <br><br>
+        <strong>A story from Kerala. A story for the world.</strong>
       </p>
       <div class="hero-btns">
-        <a class="btn-primary" href="https://beacons.ai/kuttappan.official" target="_blank">▶ Watch Now</a>
+        <a class="btn-primary" href="https://youtube.com/@kuttappan_ml" target="_blank">▶ Watch on YouTube</a>
         <a class="btn-outline" href="#characters">Meet the Characters</a>
       </div>
       <p class="hero-note">✦ Malayalam Original · English Subtitled</p>
@@ -629,7 +687,7 @@
         <div class="hero-char-icon"><img class="frame-image frame-hero-image" src="./kuttappan-yellow.png" /></div>
         <div class="hero-details">
           <div class="hero-char-label">Kuttappan</div>
-          <div class="hero-char-sub">കുട്ടപ്പൻ · 8 years old</div>
+          <div class="hero-char-sub">കുട്ടപ്പൻ · 10 years old</div>
         </div>
       </div>
     </div>
@@ -652,14 +710,14 @@
       In the global landscape of children's animation, there are hundreds of shows for children everywhere — 
       but almost nothing for a child growing up in Kerala. <strong>Kuttappan changes that.</strong>
       <br><br>
-      Set in the fictional village of Thottumkara on a backwater canal, Kuttappan follows an 8-year-old boy 
+      Set in the fictional village of Thottumkara on a backwater canal, Kuttappan follows an 10-year-old boy 
       whose plans are magnificent, whose failures are spectacular, and whose heart is the biggest thing in 
       the village. Think Pixar's visual ambition meeting an Ammachi's kitchen — warm, funny, and 
       unmistakably Kerala.
     </p>
     <div class="stat-tiles">
       <div class="stat-tile">
-        <span class="num">8</span>
+        <span class="num">10</span>
         <span class="lbl">Years Old — The Boy With The Plan</span>
       </div>
       <div class="stat-tile">
@@ -667,8 +725,8 @@
         <span class="lbl">Kerala · Village of Thottumkara</span>
       </div>
       <div class="stat-tile">
-        <span class="num">AI ✦</span>
-        <span class="lbl">Human Heart. AI Instrument.</span>
+        <span class="num">പ്ലാൻ</span>
+        <span class="lbl">Every Plan. Every Beautiful Disaster.</span>
       </div>
     </div>
   </div>
@@ -690,7 +748,7 @@
           <span class="char-badge" style="background: var(--gold); color: var(--earth);">⭐ HERO</span>
           <div class="char-name">Kuttappan</div>
           <span class="char-name-ml">കുട്ടപ്പൻ</span>
-          <span class="char-role">The Planner · The Dreamer · 8 years old</span>
+          <span class="char-role">The Planner · The Dreamer · 10 years old</span>
           <p class="char-desc">
             Overconfident in his plans. Magnificent in his disasters. Kuttappan sees every
             problem as an adventure waiting to happen — and every failure as a better story
@@ -773,111 +831,15 @@
   </div>
 </section>
 
-<!-- EPISODES -->
-<section id="episodes" class="episodes">
-  <div class="section-inner">
-    <span class="section-label">✦ Season 1</span>
-    <h2 class="section-title" style="color: white;">Kuttappan's Plans<br>Begin Here</h2>
-    <p class="ep-sub">
-      Every plan is spectacular. Every failure is more spectacular. 
-      And from every chaos — something beautiful.
-    </p>
-    <div class="ep-grid">
-
-      <div class="ep-card">
-        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--gold), var(--green));">
-          🥭
-          <span class="ep-num">Episode 01</span>
-        </div>
-        <div class="ep-body">
-          <div class="ep-title">The Mango Shot</div>
-          <p class="ep-desc">Kuttappan devises the perfect plan to get the highest mango from the neighbour's tree without anyone knowing. Thottumkara will never look at mangoes the same way again.</p>
-          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
-        </div>
-      </div>
-
-      <div class="ep-card">
-        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--laterite), var(--sky));">
-          🥁
-          <span class="ep-num">Episode 02</span>
-        </div>
-        <div class="ep-body">
-          <div class="ep-title">Chendamelom</div>
-          <p class="ep-desc">When the village temple festival needs a chenda drummer and Kuttappan volunteers without knowing how to play — the rhythm of disaster begins.</p>
-          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
-        </div>
-      </div>
-
-      <div class="ep-card">
-        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--green), var(--gold));">
-          🐔
-          <span class="ep-num">Episode 03</span>
-        </div>
-        <div class="ep-body">
-          <div class="ep-title">Chicken Chaos</div>
-          <p class="ep-desc">One escaped chicken. Three boys. An entire village mobilized. Kuttappan's simplest plan yet somehow becomes his most spectacular catastrophe.</p>
-          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
-        </div>
-      </div>
-
-      <div class="ep-card">
-        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--teal), var(--green));">
-          🤝
-          <span class="ep-num">Episode 04</span>
-        </div>
-        <div class="ep-body">
-          <div class="ep-title">Team Work</div>
-          <p class="ep-desc">Kuttappan discovers that having a team doesn't mean everyone follows the plan. Especially when the team includes Shambhu's doubts and Pakru's snacks.</p>
-          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
-        </div>
-      </div>
-
-      <div class="ep-card">
-        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--sky), var(--pink));">
-          🌟
-          <span class="ep-num">Episode 05</span>
-        </div>
-        <div class="ep-body">
-          <div class="ep-title">Brave Mission</div>
-          <p class="ep-desc">The most daring plan Kuttappan has ever announced. The whole village holds its breath. Even Ammachi pauses her cooking. This time — it might actually work.</p>
-          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank">Watch Now ▶</a>
-        </div>
-      </div>
-
-      <!-- More coming card -->
-      <div class="ep-card" style="background: var(--sky); border: 2px dashed rgba(255,255,255,0.2);">
-        <div class="ep-thumb" style="background: rgba(255,255,255,0.05);">
-          ✨
-          <span class="ep-num" style="background: rgba(255,255,255,0.1);">Coming Soon</span>
-        </div>
-        <div class="ep-body">
-          <div class="ep-title" style="color: white;">More Adventures<br>Incoming...</div>
-          <p class="ep-desc" style="color: rgba(255,255,255,0.6);">Thottumkara has more plans, more chaos, and more beautiful messes in store. Follow along so you don't miss a single disaster.</p>
-          <a class="ep-btn" href="https://beacons.ai/kuttappan.official" target="_blank" style="color: var(--gold);">Follow for Updates ▶</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- WORLD -->
-<section id="world" class="world" style="padding: 0;">
-  <!-- Wave transition from sky episodes section -->
-  <div style="background: var(--sky); line-height: 0; display: block; margin: 0; padding: 0;">
-    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block; width:100%; height:80px;">
-      <path d="M0,0 L1440,0 L1440,40 C1080,80 360,0 0,40 Z" fill="#2C3E6B"/>
-      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#F5EDD6"/>
-    </svg>
-  </div>
-  <div class="section-inner" style="padding: 2rem 1rem 4rem 1rem;">
+<section id="world" class="world">
+  <div class="section-inner">
     <span class="section-label">✦ The World</span>
     <h2 class="section-title">Welcome to<br>Thottumkara</h2>
     <p style="font-family: var(--font-display); font-size: 1.1rem; color: rgba(59,30,12,0.45); margin-bottom: 0.5rem;">തൊട്ടുംകര</p>
     <p style="color: var(--earth); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-bottom: 0;">
-      A fictional village on a backwater canal in central Kerala. Population: about 400 families. 
-      Adventures: unlimited. The world as vivid, funny, and emotionally generous as any fictional 
-      universe in the history of animation.
+      Every great animated world has a place at its heart — Springfield, the Hundred Acre Wood, Radiator Springs.
+      Ours is <strong>Thottumkara.</strong> Once you've been here, you'll always come back.
     </p>
     <div class="loc-grid">
       <div class="loc-card">
@@ -920,6 +882,87 @@
   </div>
 </section>
 
+<!-- EPISODES -->
+<section id="episodes" class="episodes">
+  <div class="section-inner">
+    <span class="section-label">✦ Season 1</span>
+    <h2 class="section-title" style="color: white;">Kuttappan's Plans<br>Begin Here</h2>
+    <p class="ep-sub">
+      Every plan is spectacular. Every failure is more spectacular.
+      And from every chaos — something beautiful.
+    </p>
+
+    <div class="ep-section-title">Now Streaming</div>
+    <div class="ep-grid">
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--gold), var(--green));">
+          🥭
+          <span class="ep-num">Episode 01 — START HERE</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">The Mango Plan</div>
+          <span class="ep-meta">കുട്ടപ്പന്റെ ഒരു കിടിലൻ മാമ്പഴ പ്ലാൻ</span>
+          <p class="ep-desc">Kuttappan devises the perfect plan to get the highest mango from the neighbour's tree without anyone knowing. Thottumkara will never look at mangoes the same way again.</p>
+          <a class="ep-btn" href="#" data-todo="PASTE REAL MANGO EPISODE URL" target="_blank">▶ Watch on YouTube <span style="opacity:0.6;">(URL TODO)</span></a>
+        </div>
+      </div>
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--laterite), var(--sky));">
+          🥁
+          <span class="ep-num">Episode 02</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">Chendamelam Disaster</div>
+          <span class="ep-meta">കുട്ടപ്പന്റെ ഭയങ്കര ചെണ്ടമേളം!</span>
+          <p class="ep-desc">The village festival needs a chenda drummer. Kuttappan volunteers — without knowing how to play. The rhythm of disaster begins.</p>
+          <a class="ep-btn" href="#" data-todo="PASTE REAL CHENDAMELAM EPISODE URL" target="_blank">▶ Watch on YouTube <span style="opacity:0.6;">(URL TODO)</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ep-section-title">Coming Soon</div>
+    <div class="ep-grid">
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--green), var(--gold));">
+          🐔
+          <span class="ep-num">Coming Soon</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">Chicken Chaos</div>
+          <p class="ep-desc">One escaped chicken. Three boys. An entire village mobilized. Kuttappan's simplest plan yet somehow becomes his most spectacular catastrophe.</p>
+          <a class="ep-btn" href="https://youtube.com/@kuttappan_ml" target="_blank">🔔 Subscribe so you don't miss it</a>
+        </div>
+      </div>
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--teal), var(--green));">
+          🤝
+          <span class="ep-num">Coming Soon</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">The Team Plan</div>
+          <p class="ep-desc">Kuttappan discovers that having a team doesn't mean everyone follows the plan. Especially when the team includes Shambhu's doubts and Pakru's snacks.</p>
+          <a class="ep-btn" href="https://youtube.com/@kuttappan_ml" target="_blank">🔔 Subscribe so you don't miss it</a>
+        </div>
+      </div>
+
+      <div class="ep-card">
+        <div class="ep-thumb" style="background: linear-gradient(135deg, var(--sky), var(--pink));">
+          🌟
+          <span class="ep-num">Coming Soon</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-title">The Bravest Plan</div>
+          <p class="ep-desc">The most daring plan Kuttappan has ever announced. The whole village holds its breath. Even Ammachi pauses her cooking. This time — it might actually work.</p>
+          <a class="ep-btn" href="https://youtube.com/@kuttappan_ml" target="_blank">🔔 Subscribe so you don't miss it</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- STUDIO -->
 <section id="studio" class="studio">
   <div class="section-inner">
@@ -950,13 +993,13 @@
           </div>
           <div class="studio-name-block">
             <span class="studio-name">AImaginist Studio</span>
-            <span class="studio-tagline-sm">Human Vision · AI Instrument</span>
+            <span class="studio-tagline-sm">Kerala-rooted animation craft</span>
           </div>
         </div>
 
         <!-- Manifesto Quote -->
         <div class="studio-manifesto">
-          "We do not use AI to replace storytelling. We use AI to make storytelling possible."
+          "We don't use technology to replace storytelling. We use it to make storytelling possible."
         </div>
 
       </div>
@@ -964,102 +1007,15 @@
       <!-- Right: Story text -->
       <div class="studio-right-text">
         <p>
-          AImaginist Studio is one human being with a clear vision, wielding AI tools as 
-          creative instruments — building what was previously only possible with teams of hundreds.
+          Kuttappan is made by AImaginist Studio — one human vision, Kerala-rooted, frame by frame.
         </p>
         <p>
-          Kuttappan is the first major animated IP created through human-directed AI animation. 
-          The technology is the instrument. The vision is the musician. 
-          The love for Kerala is the song.
+          Every story, every character, every proverb of Ammachi's is written and directed by hand.
+          Modern animation tools are the brush; the painting is always human; the love for Kerala is the song.
         </p>
         <p style="color: var(--gold); font-family: var(--font-accent); font-size: 1.05rem;">
-          No AI generated that love. No AI can. But AI can help it reach the world. 
-          And that is enough. That is everything.
+          Specific enough for Thrissur. Universal enough for Tokyo.
         </p>
-      </div>
-    </div>
-
-    <!-- PROCESS FLOW -->
-    <div class="studio-process">
-      <span class="process-label">✦ How Kuttappan is Made — The Pipeline</span>
-      <div class="process-steps">
-
-        <!-- Step 1: Vision -->
-        <div class="process-step">
-          <div class="process-icon" style="background: linear-gradient(135deg, #C0392B, #8B2020);">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <circle cx="15" cy="11" r="5" stroke="white" stroke-width="1.8" fill="none"/>
-              <path d="M8 24 C8 19 22 19 22 24" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-              <!-- Heart -->
-              <path d="M15 8 C15 6.5 13 5 12 6.5 C11 8 13 10 15 11.5 C17 10 19 8 18 6.5 C17 5 15 6.5 15 8Z" fill="#E8A020" opacity="0.8"/>
-            </svg>
-          </div>
-          <div class="process-step-name">Human Vision</div>
-          <div class="process-step-desc">Story, characters, emotional truth</div>
-        </div>
-        <div class="process-arrow">→</div>
-
-        <!-- Step 2: Script -->
-        <div class="process-step">
-          <div class="process-icon" style="background: linear-gradient(135deg, #1A7A6E, #0d5a50);">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <rect x="6" y="4" width="18" height="22" rx="3" stroke="white" stroke-width="1.8" fill="none"/>
-              <line x1="10" y1="10" x2="20" y2="10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="10" y1="14" x2="20" y2="14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="10" y1="18" x2="16" y2="18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <!-- Pencil tip -->
-              <path d="M19 20 L22 17 L24 19 L21 22Z" fill="#E8A020"/>
-              <line x1="21" y1="22" x2="20" y2="24" stroke="#E8A020" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="process-step-name">Script & Story</div>
-          <div class="process-step-desc">Kerala-rooted narrative craft</div>
-        </div>
-        <div class="process-arrow">→</div>
-
-        <!-- Step 3: AI Generation -->
-        <div class="process-step">
-          <div class="process-icon" style="background: linear-gradient(135deg, #2C3E6B, #1a2a4a);">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <!-- AI chip -->
-              <rect x="8" y="8" width="14" height="14" rx="3" stroke="white" stroke-width="1.8" fill="none"/>
-              <rect x="11" y="11" width="8" height="8" rx="1.5" fill="rgba(232,160,32,0.3)" stroke="#E8A020" stroke-width="1"/>
-              <!-- Pins -->
-              <line x1="11" y1="5" x2="11" y2="8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="15" y1="5" x2="15" y2="8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="19" y1="5" x2="19" y2="8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="11" y1="22" x2="11" y2="25" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="15" y1="22" x2="15" y2="25" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="19" y1="22" x2="19" y2="25" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="5" y1="11" x2="8" y2="11" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="5" y1="15" x2="8" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="5" y1="19" x2="8" y2="19" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="22" y1="11" x2="25" y2="11" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="22" y1="15" x2="25" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="22" y1="19" x2="25" y2="19" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <!-- Spark -->
-              <path d="M15 13 L15.4 14.6 L17 15 L15.4 15.4 L15 17 L14.6 15.4 L13 15 L14.6 14.6Z" fill="#E8A020"/>
-            </svg>
-          </div>
-          <div class="process-step-name">AI Animation</div>
-          <div class="process-step-desc">Directed, prompted, curated</div>
-        </div>
-        <div class="process-arrow">→</div>
-
-        <!-- Step 4: Final -->
-        <div class="process-step">
-          <div class="process-icon" style="background: linear-gradient(135deg, #E8A020, #c07810);">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <!-- Star / publish -->
-              <path d="M15 4 L17.5 11 L25 11 L19 15.5 L21.5 23 L15 18.5 L8.5 23 L11 15.5 L5 11 L12.5 11Z" stroke="white" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
-              <!-- Center dot -->
-              <circle cx="15" cy="14" r="2" fill="white"/>
-            </svg>
-          </div>
-          <div class="process-step-name">Thottumkara</div>
-          <div class="process-step-desc">Alive on screen for the world</div>
-        </div>
-
       </div>
     </div>
 
@@ -1145,11 +1101,15 @@
 <!-- CTA BAND -->
 <div class="cta-band">
   <h2>Join Thottumkara</h2>
-  <p>Follow Kuttappan's adventures. Be part of the village.</p>
-  <a class="btn-primary" href="https://beacons.ai/kuttappan.official" target="_blank" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
-    Follow @kuttappan.official →
+  <p>Follow Kuttappan's plans. Be part of the village.</p>
+  <a class="btn-primary" href="https://youtube.com/@kuttappan_ml" target="_blank" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+    ▶ Subscribe on YouTube
   </a>
-  <span class="cta-note">YouTube · Instagram · Facebook · All Platforms</span>
+  <div class="cta-secondary">
+    Also on <a href="https://www.instagram.com/kuttappan.official" target="_blank">Instagram</a> ·
+    <a href="https://www.facebook.com/profile.php?id=61573234315135" target="_blank">Facebook</a> ·
+    <a href="https://beacons.ai/kuttappan.official" target="_blank">All platforms</a>
+  </div>
 </div>
 
 <!-- FOOTER -->
@@ -1174,16 +1134,21 @@
     <div class="footer-col">
       <h4>Find Us Everywhere</h4>
       <p>Watch, follow, and join the Thottumkara community across all platforms.</p>
-      <a class="footer-cta" href="https://beacons.ai/kuttappan.official" target="_blank">All Links →</a>
+      <div class="footer-links">
+        <a class="footer-cta" href="https://youtube.com/@kuttappan_ml" target="_blank">YouTube →</a>
+        <a href="https://beacons.ai/kuttappan.official" target="_blank">All Links →</a>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2024 AImaginist Studio · kuttappan.in · All Rights Reserved</div>
-    <div>Made with love for Kerala. Powered by human vision and AI.</div>
+    <div>© <span id="year">2026</span> AImaginist Studio · kuttappan.in · All Rights Reserved</div>
+    <div>Made with love for Kerala. A story for the world.</div>
   </div>
 </footer>
 
 <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
   // Smooth close mobile nav on link click
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => {
@@ -1201,7 +1166,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.char-card, .ep-card, .loc-card, .stat-tile, .studio-stat').forEach(el => {
+  document.querySelectorAll('.char-card, .ep-card, .loc-card, .stat-tile, .pillar-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
