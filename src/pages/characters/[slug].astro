@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowLeft, ArrowRight, Play as WatchIcon } from '@lucide/astro';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { characters, type Character } from '../../data/characters';
+
+export function getStaticPaths() {
+  return characters.map((character) => ({params: {slug: character.slug}, props: {character}}));
+}
+
+type Props = { character: Character };
+const {character} = Astro.props;
+const index = characters.findIndex((item) => item.slug === character.slug);
+const previous = characters[(index - 1 + characters.length) % characters.length];
+const next = characters[(index + 1) % characters.length];
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {'@type': 'ListItem', position: 1, name: 'Home', item: 'https://kuttappan.in'},
+    {'@type': 'ListItem', position: 2, name: 'Characters', item: 'https://kuttappan.in/characters'},
+    {'@type': 'ListItem', position: 3, name: character.name, item: `https://kuttappan.in/characters/${character.slug}`},
+  ],
+};
+---
+
+<BaseLayout title={`${character.name} | Kuttappan Characters`} description={character.intro} image={character.actionImage.src} imageAlt={character.actionImageAlt} schema={breadcrumb}>
+  <section class={`character-detail-hero character-detail-${character.accent}`}>
+    <div class="character-detail-copy">
+      <p class="section-kicker">Character file · {String(index + 1).padStart(2, '0')}</p>
+      <h1>{character.name}</h1>
+      <p class="character-relation">{character.relation}</p>
+      <p>{character.intro}</p>
+      <a class="button button-dark" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer"><WatchIcon size={18} fill="currentColor" aria-hidden="true" /> Watch the stories</a>
+    </div>
+    <div class="character-detail-art">
+      <Image src={character.actionImage} alt={character.actionImageAlt} widths={[700, 1000, 1400]} sizes="55vw" />
+    </div>
+    <div class="character-detail-name" aria-hidden="true">{character.name}</div>
+  </section>
+
+  <section class="character-file section-pad">
+    <div class="page-shell character-file-grid">
+      <div>
+        <p class="section-kicker">Canon reference</p>
+        <h2>Every detail stays<br />on model.</h2>
+        <p>{character.canon}</p>
+      </div>
+      <figure data-reveal>
+        <Image src={character.detailImage} alt={character.detailImageAlt} widths={[760, 1100, 1500]} sizes="(max-width: 700px) 90vw, 52vw" loading="lazy" />
+        <figcaption>Cinematic character study · {character.name}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <nav class="character-pagination page-shell" aria-label="Character navigation">
+    <a href={`/characters/${previous.slug}`}><ArrowLeft size={18} aria-hidden="true" /><span>Previous</span><strong>{previous.name}</strong></a>
+    <a href="/characters">All characters</a>
+    <a href={`/characters/${next.slug}`}><span>Next</span><strong>{next.name}</strong><ArrowRight size={18} aria-hidden="true" /></a>
+  </nav>
+</BaseLayout>

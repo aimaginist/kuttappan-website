@@ -1,0 +1,55 @@
+---
+import { ArrowUpRight, Play as WatchIcon } from '@lucide/astro';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout title="The World of Thottumkara | Kuttappan" description="Enter Thottumkara, the fictional 1990s Kerala backwater village at the heart of Kuttappan." image="/media/stills/backwater.webp">
+  <PageHero chapter="Chapter 03" title="The World of Thottumkara" statement="A fictional village in 1990s Kerala, shaped by backwaters, laterite lanes, monsoon green and golden evenings." image="/media/stills/backwater.webp" imageAlt="A lush animated Kerala backwater landscape in Thottumkara." theme="teal" />
+
+  <section class="world-facts section-pad">
+    <div class="page-shell">
+      <SectionHeading index="01" kicker="Place and time" title="Culturally specific. Instantly familiar." copy="The series brings back the warmth, mischief and nostalgia of village life without sanding Kerala down into a generic backdrop." />
+      <div class="world-fact-grid">
+        <article data-reveal><span>01</span><h3>Thottumkara</h3><p>A fictional Kerala village and the home of Kuttappan’s stories.</p></article>
+        <article data-reveal><span>02</span><h3>The 1990s</h3><p>The era that gives the series its sense of memory and village nostalgia.</p></article>
+        <article data-reveal><span>03</span><h3>Backwater Kerala</h3><p>Water, laterite lanes, monsoon green and brass-warm light shape the visual world.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="world-lane" data-scene-scale>
+    <video muted loop playsinline preload="none" poster="/media/stills/village-lane.webp" data-scroll-video aria-label="Kuttappan running down a laterite lane in Thottumkara">
+      <source src="/media/video/thottumkara-world-web.mp4" type="video/mp4" />
+    </video>
+    <div class="world-lane-shade" aria-hidden="true"></div>
+    <div class="page-shell world-lane-copy">
+      <p class="section-kicker" data-reveal>Scene 01 · The lane</p>
+      <h2 data-reveal>Every shortcut has<br />a longer story.</h2>
+      <p data-reveal>Thottumkara turns daily village life into cinematic comedy.</p>
+    </div>
+  </section>
+
+  <section class="world-malayalam section-pad">
+    <div class="page-shell world-malayalam-grid">
+      <div>
+        <p class="section-kicker">The story in Malayalam</p>
+        <blockquote lang="ml">തോട്ടുംകര എന്ന 1990കളിലെ കേരള ഗ്രാമത്തിൽ ജീവിക്കുന്ന കുട്ടപ്പന്റെയും കൂട്ടുകാരുടെയും തമാശ നിറഞ്ഞ കഥകൾ. നാടൻ ഗ്രാമജീവിതത്തിന്റെ ഓർമ്മകളും ചിരിയും ഒരുമിച്ച് — മലയാളി കുടുംബങ്ങൾക്കായി.</blockquote>
+      </div>
+      <div data-reveal>
+        <img src="/media/stills/golden-hour.webp" alt="A golden-hour football scene in Thottumkara." loading="lazy" />
+        <p>A story from Kerala. A story for the world.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="world-cta">
+    <div class="page-shell">
+      <h2 data-reveal>Visit the village<br />every two weeks.</h2>
+      <a class="button button-gold" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer" data-reveal><WatchIcon size={18} fill="currentColor" aria-hidden="true" /> Watch on YouTube</a>
+      <a class="text-arrow" href="/episodes" data-reveal>Browse episodes <ArrowUpRight size={16} aria-hidden="true" /></a>
+    </div>
+  </section>
+</BaseLayout>

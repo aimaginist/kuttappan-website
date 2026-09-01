@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowUpRight } from '@lucide/astro';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import CharacterCard from '../../components/CharacterCard.astro';
+import { characters, supportingCharacters } from '../../data/characters';
+---
+
+<BaseLayout title="Characters | Kuttappan" description="Meet Kuttappan, Shambhu, Pakru and the cast of Thottumkara." image="/media/stills/golden-hour.webp">
+  <PageHero chapter="Chapter 02" title="Cast of Thottumkara" statement="Kuttappan and his friends bring the warmth, mischief and nostalgia of village life into every story." image="/media/stills/golden-hour.webp" imageAlt="Friends playing football in an animated 1990s Kerala village." theme="gold" />
+
+  <section class="character-index section-pad">
+    <div class="page-shell">
+      <SectionHeading index="01" kicker="The gang" title="Good friends. Bad plans." copy="Three friends at the centre of the comedy, each rendered from the studio’s approved character reference plates." />
+      <div class="character-grid character-index-grid">
+        {characters.map((character, index) => <CharacterCard character={character} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="reference-gallery section-pad">
+    <div class="page-shell">
+      <div class="section-topline">
+        <SectionHeading index="02" kicker="From the reference room" title="More faces from the village." />
+        <a class="text-arrow" href="/press">Press assets <ArrowUpRight size={16} aria-hidden="true" /></a>
+      </div>
+      <div class="reference-grid">
+        {supportingCharacters.map((character, index) => (
+          <figure data-reveal>
+            <Image src={character.image} alt={character.imageAlt} widths={[640, 960, 1400]} sizes="(max-width: 700px) 90vw, 31vw" loading="lazy" />
+            <figcaption><span>{String(index + 4).padStart(2, '0')}</span><strong>{character.name}</strong></figcaption>
+          </figure>
+        ))}
+      </div>
+      <p class="reference-note">Additional character biographies will be added only from the approved Brand Bible and Series Bible.</p>
+    </div>
+  </section>
+</BaseLayout>

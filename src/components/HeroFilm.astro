@@ -1,0 +1,38 @@
+---
+import { ArrowDown, Play as WatchIcon } from '@lucide/astro';
+---
+
+<section class="home-hero" data-film-sequence data-hero>
+  <div class="hero-media" aria-hidden="true">
+    <video class="hero-video is-current" muted playsinline preload="metadata" poster="/media/stills/hero-run.webp" data-sequence-video>
+      <source src="/media/video/hero-run-web.mp4" type="video/mp4" />
+    </video>
+    <video class="hero-video" muted playsinline preload="metadata" poster="/media/stills/backwater.webp" data-sequence-video>
+      <source src="/media/video/backwater-web.mp4" type="video/mp4" />
+    </video>
+    <video class="hero-video" muted playsinline preload="metadata" poster="/media/stills/golden-hour.webp" data-sequence-video>
+      <source src="/media/video/golden-hour-web.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-frame" aria-hidden="true"></div>
+  <div class="hero-copy page-shell">
+    <p class="hero-kicker" data-hero-line>A three-chapter film from Thottumkara</p>
+    <h1 data-hero-line>Kuttappan</h1>
+    <p class="hero-storyline" data-hero-line>Run into the story.<br />Stay for the world.</p>
+    <p class="hero-description" data-hero-line>A premium Malayalam 3D animated comedy filled with village warmth, familiar chaos and laughter.</p>
+    <a class="button button-gold" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer" data-hero-line>
+      <WatchIcon size={19} fill="currentColor" aria-hidden="true" />
+      Watch on YouTube
+    </a>
+  </div>
+  <div class="hero-chapters" aria-hidden="true">
+    <div class="is-current" data-sequence-caption><span>01</span><i></i><strong>The chase</strong></div>
+    <div data-sequence-caption><span>02</span><i></i><strong>The village</strong></div>
+    <div data-sequence-caption><span>03</span><i></i><strong>Golden hour</strong></div>
+  </div>
+  <p class="hero-positioning">A story from Kerala. A story for the world.</p>
+  <a class="hero-scroll" href="#opening-credits" aria-label="Continue to the story">
+    <ArrowDown size={18} aria-hidden="true" />
+  </a>
+</section>

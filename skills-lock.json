@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "skills": {
+    "21st-ai": {
+      "source": "21st-dev/skill",
+      "sourceType": "github",
+      "skillPath": "skills/21st-ai/SKILL.md",
+      "computedHash": "c859b3edd8bdbc181d43bfc6dc6a68b1015e7103b65178fe800a83fdbba0ca09"
+    },
+    "21st-cli-use": {
+      "source": "21st-dev/skill",
+      "sourceType": "github",
+      "skillPath": "skills/21st-cli-use/SKILL.md",
+      "computedHash": "945e46c4340a354f8e998eb39c7d6b7948ca0fe204e0858af36d34e8345b2acb"
+    },
+    "21st-design-sync": {
+      "source": "21st-dev/skill",
+      "sourceType": "github",
+      "skillPath": "skills/21st-design-sync/SKILL.md",
+      "computedHash": "7ac3769f89e67ad048cbbd50cf35c00bd871259257a472c73321fc9d450caca9"
+    },
+    "21st-registry": {
+      "source": "21st-dev/skill",
+      "sourceType": "github",
+      "skillPath": "skills/21st-registry/SKILL.md",
+      "computedHash": "47cd10719b117ef90e17dd3c03506d450eca442df76d6e1de7b034d7a64413d6"
+    },
+    "21st-ui-build": {
+      "source": "21st-dev/skill",
+      "sourceType": "github",
+      "skillPath": "skills/21st-ui-build/SKILL.md",
+      "computedHash": "1d87528f07f5d8169abb27dc011f86a6096dc54594ae18e4b7780961bd2cb249"
+    },
+    "21st-ui-explore": {
+      "source": "21st-dev/skill",
+      "sourceType": "github",
+      "skillPath": "skills/21st-ui-explore/SKILL.md",
+      "computedHash": "107087fb9d4934fc2124eb0523cd12f0a9548ddaa4ec69259b34923563bde2f0"
+    },
+    "21st-ui-review": {
+      "source": "21st-dev/skill",
+      "sourceType": "github",
+      "skillPath": "skills/21st-ui-review/SKILL.md",
+      "computedHash": "ce7470a4777379716282b5a410a8a3211ac51a763786f6b81c3abcd282c220ab"
+    }
+  }
+}

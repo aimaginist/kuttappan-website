@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowUpRight } from '@lucide/astro';
+import type { Character } from '../data/characters';
+
+type Props = { character: Character; index: number };
+const {character, index} = Astro.props;
+---
+
+<article class={`character-card character-${character.accent}`} data-character-card data-reveal>
+  <a class="character-art" href={`/characters/${character.slug}`} aria-label={`Meet ${character.name}`}>
+    <Image class="character-action-image" src={character.actionImage} alt={character.actionImageAlt} widths={[480, 720, 960]} sizes="(max-width: 700px) 88vw, 31vw" loading="lazy" />
+  </a>
+  <div class="character-card-meta">
+    <span>{String(index + 1).padStart(2, '0')}</span>
+    <p>{character.relation}</p>
+  </div>
+  <h3>{character.name}</h3>
+  <a class="text-arrow" href={`/characters/${character.slug}`}>Meet {character.name} <ArrowUpRight size={15} aria-hidden="true" /></a>
+</article>

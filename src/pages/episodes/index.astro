@@ -1,0 +1,51 @@
+---
+import { Play as WatchIcon } from '@lucide/astro';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import EpisodeCard from '../../components/EpisodeCard.astro';
+import { clips, episodes } from '../../lib/episodes';
+
+const playlistGroups = new Map<string, typeof episodes>();
+episodes.forEach((episode) => {
+  const names = episode.playlistNames.length ? episode.playlistNames : ['All Episodes'];
+  names.forEach((name) => playlistGroups.set(name, [...(playlistGroups.get(name) || []), episode]));
+});
+---
+
+<BaseLayout title="Episodes | Kuttappan" description="Watch Kuttappan episodes generated from the official Malayalam animation YouTube channel." image="/media/stills/village-lane.webp">
+  <PageHero chapter="Chapter 01" title="Episodes" statement="Fresh Malayalam animated comedy from Thottumkara, with new stories every two weeks." image="/media/stills/village-lane.webp" imageAlt="Kuttappan running through a laterite village lane." theme="green" />
+
+  <section class="episode-index section-pad">
+    <div class="page-shell">
+      <SectionHeading index="01" kicker="Now showing" title="Every magnificent plan, in release order." copy="Village warmth, familiar chaos and laughter for Malayali families everywhere to watch together." />
+      {episodes.length ? (
+        Array.from(playlistGroups.entries()).map(([name, items], groupIndex) => (
+          <section class="episode-group">
+            <div class="episode-group-heading"><span>{String(groupIndex + 1).padStart(2, '0')}</span><h2>{name}</h2><i></i></div>
+            <div class="episode-index-grid">
+              {items.map((episode, index) => <EpisodeCard episode={episode} index={index} featured={index === 0 && groupIndex === 0} />)}
+            </div>
+          </section>
+        ))
+      ) : (
+        <div class="episodes-empty">
+          <p>The official channel is the first place to watch.</p>
+          <a class="button button-dark" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer"><WatchIcon size={18} fill="currentColor" aria-hidden="true" /> Visit YouTube</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  {clips.length > 0 && (
+    <section class="clips-strip section-pad">
+      <div class="page-shell">
+        <SectionHeading index="02" kicker="Short scenes" title="Quick trouble from Thottumkara." />
+        <div class="clips-grid">
+          {clips.slice(0, 6).map((clip, index) => <EpisodeCard episode={clip} index={index} />)}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

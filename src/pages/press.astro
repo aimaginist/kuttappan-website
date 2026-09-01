@@ -1,0 +1,63 @@
+---
+import { ArrowUpRight, Download, Mail } from '@lucide/astro';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const downloads = [
+  {name: 'Kuttappan master sheet', file: 'CHAR_KUTTAPPAN_MASTER.png'},
+  {name: 'Kuttappan pose sheet', file: 'CHAR_KUTTAPPAN_POSE.png'},
+  {name: 'Kuttappan expression sheet', file: 'CHAR_KUTTAPPAN_EXPRESSIONS.png'},
+  {name: 'Shambhu master sheet', file: 'CHAR_SHAMBHU_MASTER.png'},
+  {name: 'Shambhu pose sheet', file: 'CHAR_SHAMBHU_POSE.png'},
+  {name: 'Pakru pose sheet', file: 'CHAR_PAKRU_POSE.png'},
+  {name: 'Ammachi master sheet', file: 'CHAR_AMMACHI_MASTER.png'},
+  {name: 'Appuppan reference sheet', file: 'CHAR_APPUPPAN_FLOUR_MASTER.png'},
+  {name: 'Ratchasan master sheet', file: 'CHAR_DOG_MASTER.png'},
+];
+---
+
+<BaseLayout title="Press Kit | Kuttappan" description="Official facts, approved character sheets and press contact for Kuttappan and AImaginist Studio." image="/media/stills/golden-hour.webp">
+  <PageHero chapter="Chapter 05" title="Press Room" statement="Official facts and approved visual references for Kuttappan, Thottumkara and AImaginist Studio." image="/media/stills/golden-hour.webp" imageAlt="Golden-hour animated village scene from Kuttappan." theme="gold" />
+
+  <section class="press-facts section-pad">
+    <div class="page-shell press-layout">
+      <SectionHeading index="01" kicker="Fact sheet" title="Kuttappan at a glance." />
+      <dl class="fact-sheet" data-reveal>
+        <div><dt>Series</dt><dd>Kuttappan</dd></div>
+        <div><dt>Format</dt><dd>Premium 3D animated comedy</dd></div>
+        <div><dt>Language</dt><dd>Malayalam-first</dd></div>
+        <div><dt>Setting</dt><dd>Thottumkara, a fictional village in 1990s Kerala</dd></div>
+        <div><dt>Audience</dt><dd>Malayali families and co-viewing</dd></div>
+        <div><dt>Cadence</dt><dd>New episodes every two weeks</dd></div>
+        <div><dt>Studio</dt><dd>AImaginist Studio</dd></div>
+        <div><dt>Channel</dt><dd><a href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer">@kuttappan_ml <ArrowUpRight size={14} aria-hidden="true" /></a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="press-downloads section-pad">
+    <div class="page-shell">
+      <SectionHeading index="02" kicker="Approved assets" title="Character reference sheets." copy="Use these studio-supplied plates without altering character details or inventing new artwork." light />
+      <div class="download-list">
+        {downloads.map((item, index) => (
+          <a href={`/press/character-sheets/${item.file}`} download data-reveal>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <strong>{item.name}</strong>
+            <Download size={18} aria-hidden="true" />
+          </a>
+        ))}
+      </div>
+      <p class="press-pending">Logo lockups, the complete press-kit PDF and downloadable brand bundle will be added when supplied by the studio.</p>
+    </div>
+  </section>
+
+  <section class="press-contact section-pad">
+    <div class="page-shell">
+      <p class="section-kicker" data-reveal>Press, festivals and partnerships</p>
+      <h2 data-reveal>Request more material.</h2>
+      <a class="button button-dark" href="mailto:hello@aimaginist.studio" data-reveal><Mail size={18} aria-hidden="true" /> hello@aimaginist.studio</a>
+    </div>
+  </section>
+</BaseLayout>

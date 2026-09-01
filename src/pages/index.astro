@@ -1,0 +1,195 @@
+---
+import { Image } from 'astro:assets';
+import { ArrowUpRight, Play as WatchIcon } from '@lucide/astro';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroFilm from '../components/HeroFilm.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CharacterCard from '../components/CharacterCard.astro';
+import EpisodeCard from '../components/EpisodeCard.astro';
+import { characters } from '../data/characters';
+import { episodes } from '../lib/episodes';
+import expressionEnsemble from '../assets/home/three-friends-warning-look.png';
+
+const latestEpisodes = episodes.slice(0, 3);
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'TVSeries',
+    name: 'Kuttappan',
+    inLanguage: 'ml',
+    genre: ['Animation', 'Comedy', 'Family'],
+    description: 'A premium Malayalam 3D animated comedy series set in Thottumkara, a fictional village in 1990s Kerala.',
+    url: 'https://kuttappan.in',
+    sameAs: [
+      'https://youtube.com/@kuttappan_ml',
+      'https://www.instagram.com/kuttappan.official',
+      'https://www.facebook.com/profile.php?id=61573234315135',
+      'https://beacons.ai/kuttappan.official',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'AImaginist Studio',
+    email: 'hello@aimaginist.studio',
+    url: 'https://kuttappan.in/studio',
+    logo: 'https://kuttappan.in/brand/kuttappan-logo.png',
+  },
+];
+---
+
+<BaseLayout bodyClass="home-page" schema={schema}>
+  <HeroFilm />
+
+  <section class="opening-credits" id="opening-credits">
+    <div class="page-shell opening-grid">
+      <p class="opening-label">Now playing</p>
+      <p class="opening-positioning">A story from Kerala.<br />A story for the world.</p>
+      <div class="opening-facts">
+        <span>Malayalam-first</span>
+        <span>3D animated comedy</span>
+        <span>New episodes every two weeks</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="world-opening scene-band" data-scene-scale>
+    <img src="/media/stills/backwater.webp" alt="A cinematic animated Kerala backwater scene from Kuttappan." loading="lazy" />
+    <div class="scene-shade" aria-hidden="true"></div>
+    <div class="page-shell scene-copy">
+      <SectionHeading index="01" kicker="The world" title="Somewhere in 1990s Kerala, every ordinary day becomes a story." light />
+      <p class="malayalam-line" lang="ml" data-reveal>തോട്ടുംകര എന്ന 1990കളിലെ കേരള ഗ്രാമത്തിൽ ജീവിക്കുന്ന കുട്ടപ്പന്റെയും കൂട്ടുകാരുടെയും തമാശ നിറഞ്ഞ കഥകൾ.</p>
+      <a class="button button-ghost-light" href="/world" data-reveal>Enter Thottumkara <ArrowUpRight size={17} aria-hidden="true" /></a>
+    </div>
+  </section>
+
+  <section class="comedy-section section-pad">
+    <div class="page-shell comedy-layout">
+      <div class="comedy-copy">
+        <SectionHeading index="02" kicker="The rhythm" title="Plans. Panic. Repeat." copy="Kuttappan’s ideas begin magnificently. The village usually has other plans." />
+        <div class="beat-list" data-reveal>
+          <div><span>01</span><p>A brilliant idea</p></div>
+          <div><span>02</span><p>A tiny complication</p></div>
+          <div><span>03</span><p>A magnificent failure</p></div>
+        </div>
+      </div>
+      <figure class="comedy-film" data-reveal data-scene-scale>
+        <video muted loop playsinline preload="none" poster="/media/stills/dog-chase.webp" data-scroll-video aria-label="Animated village chase scene from Kuttappan">
+          <source src="/media/video/dog-chase-web.mp4" type="video/mp4" />
+        </video>
+        <figcaption><span>Scene 02</span><span>Things escalate</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="film-reel" data-reel>
+    <div class="reel-heading page-shell">
+      <SectionHeading index="03" kicker="A village in motion" title="The roads, water and golden evenings of Thottumkara." light />
+    </div>
+    <div class="reel-track" data-reel-track>
+      <article class="reel-panel reel-panel-wide">
+        <img src="/media/stills/village-lane.webp" alt="Kuttappan running along a laterite village lane." loading="lazy" />
+        <div class="reel-caption"><span>01</span><h3>The lane</h3><p>Where a quiet shortcut becomes a full chase.</p></div>
+      </article>
+      <article class="reel-panel">
+        <video muted loop playsinline preload="none" poster="/media/stills/pakru-puddle.webp" data-scroll-video aria-label="Pakru jumping through a village puddle">
+          <source src="/media/video/monsoon-puddle-web.mp4" type="video/mp4" />
+        </video>
+        <div class="reel-caption"><span>02</span><h3>The monsoon</h3><p>Every puddle invites a bigger decision.</p></div>
+      </article>
+      <article class="reel-panel reel-panel-wide">
+        <img src="/media/stills/golden-hour.webp" alt="Friends playing football at golden hour in Thottumkara." loading="lazy" />
+        <div class="reel-caption"><span>03</span><h3>The ground</h3><p>Good friends, bad plans, one more match.</p></div>
+      </article>
+      <article class="reel-panel">
+        <video muted loop playsinline preload="none" poster="/media/stills/elephant.webp" data-scroll-video aria-label="An elephant moving through a lush animated Kerala village scene">
+          <source src="/media/video/elephant-jump-web.mp4" type="video/mp4" />
+        </video>
+        <div class="reel-caption"><span>04</span><h3>The surprise</h3><p>Sometimes the village thinks even bigger.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="characters-section section-pad">
+    <div class="page-shell">
+      <div class="section-topline">
+        <SectionHeading index="04" kicker="The cast" title="Meet the gang behind the magnificent plans." />
+        <a class="text-arrow" href="/characters">All characters <ArrowUpRight size={16} aria-hidden="true" /></a>
+      </div>
+      <div class="character-grid">
+        {characters.map((character, index) => <CharacterCard character={character} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="expression-break" data-scene-scale>
+    <div class="expression-copy page-shell">
+      <p class="section-kicker" data-reveal>Three faces. Nine warning signs.</p>
+      <h2 data-reveal>You already know<br />that look.</h2>
+      <p data-reveal>Something is about to go very wrong in Thottumkara.</p>
+    </div>
+    <div class="expression-sheet">
+      <Image src={expressionEnsemble} alt="Kuttappan, Shambhu and Pakru freeze mid-sneak after realizing their plan is going wrong." widths={[900, 1400, 1900]} sizes="(max-width: 560px) 100vw, 70vw" loading="lazy" />
+    </div>
+    <div class="expression-word" aria-hidden="true">Mischief</div>
+  </section>
+
+  <section class="episodes-section section-pad">
+    <div class="page-shell">
+      <div class="section-topline">
+        <SectionHeading index="05" kicker="Now showing" title="Fresh stories from the village." copy="New episodes every two weeks for Malayali families everywhere to watch and laugh together." />
+        <a class="text-arrow" href="/episodes">All episodes <ArrowUpRight size={16} aria-hidden="true" /></a>
+      </div>
+      {latestEpisodes.length > 0 ? (
+        <div class="episode-grid">
+          {latestEpisodes.map((episode, index) => <EpisodeCard episode={episode} index={index} featured={index === 0} />)}
+        </div>
+      ) : (
+        <div class="episodes-empty" data-reveal>
+          <p>The next screening begins on YouTube.</p>
+          <a class="button button-dark" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer"><WatchIcon size={18} fill="currentColor" aria-hidden="true" /> Visit the channel</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="malayalam-section">
+    <div class="malayalam-film" data-parallax="0.08">
+      <video muted loop playsinline preload="none" poster="/media/stills/jackfruit.webp" data-scroll-video aria-label="Kuttappan in an animated Kerala village scene">
+        <source src="/media/video/jackfruit-web.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="malayalam-copy page-shell">
+      <p class="section-kicker" data-reveal>Malayalam-first · Thottumkara</p>
+      <blockquote lang="ml" data-reveal>നാടൻ ഗ്രാമജീവിതത്തിന്റെ ഓർമ്മകളും ചിരിയും ഒരുമിച്ച് — മലയാളി കുടുംബങ്ങൾക്കായി.</blockquote>
+      <p data-reveal>Village memories and laughter, made for Malayali families everywhere to watch together.</p>
+    </div>
+  </section>
+
+  <section class="studio-teaser section-pad">
+    <div class="page-shell studio-grid">
+      <div>
+        <SectionHeading index="06" kicker="Behind the frame" title="One vision. Many moving parts." copy="AImaginist Studio brings character, performance, light and sound together to build Kuttappan’s world." />
+        <a class="button button-dark" href="/studio">Visit the studio <ArrowUpRight size={17} aria-hidden="true" /></a>
+      </div>
+      <div class="studio-contact-sheet" data-reveal>
+        <figure><img src="/media/stills/hero-run.webp" alt="Kuttappan running through a forest scene." loading="lazy" /><figcaption>Performance</figcaption></figure>
+        <figure><img src="/media/stills/golden-hour.webp" alt="Golden-hour football scene in Thottumkara." loading="lazy" /><figcaption>Light</figcaption></figure>
+        <figure><img src="/media/stills/backwater.webp" alt="Backwater action scene in Thottumkara." loading="lazy" /><figcaption>World</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-screening" data-scene-scale>
+    <video muted loop playsinline preload="none" poster="/media/stills/elephant.webp" data-scroll-video aria-label="Animated elephant scene from Kuttappan">
+      <source src="/media/video/elephant-jump-web.mp4" type="video/mp4" />
+    </video>
+    <div class="final-shade" aria-hidden="true"></div>
+    <div class="final-copy page-shell">
+      <p class="section-kicker" data-reveal>Next screening</p>
+      <h2 data-reveal>Come for the plan.<br />Stay for the chaos.</h2>
+      <a class="button button-gold" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer" data-reveal><WatchIcon size={19} fill="currentColor" aria-hidden="true" /> Subscribe on YouTube</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "project": {
+    "name": "Kuttappan",
+    "productType": "cinematic animated-series brand site",
+    "stack": ["Astro", "TypeScript", "Tailwind CSS", "GSAP"]
+  },
+  "sources": {
+    "tokens": ["src/styles/global.css"],
+    "components": ["src/components"],
+    "assets": ["src/assets/characters", "public/media"],
+    "instructions": ["kuttappan-website-brief.md", "design-system/kuttappan/MASTER.md"]
+  },
+  "design": {
+    "colorMode": "light with cinematic dark scenes",
+    "colors": {
+      "ink": "#171812",
+      "rice": "#fffaf0",
+      "paper": "#eee4ce",
+      "laterite": "#aa3f27",
+      "teal": "#1d5a59",
+      "monsoon": "#315b38",
+      "gold": "#e8ad31",
+      "sky": "#4b91a3"
+    },
+    "typography": {
+      "display": "Bodoni Moda",
+      "sans": "DM Sans",
+      "malayalam": "Manjari"
+    },
+    "spacing": {"pageGutter": "5.5vw", "section": "120px"},
+    "radius": {"controls": "4px", "cards": "4px"},
+    "shadows": {"default": "none; use contrast, borders and film overlays"},
+    "motion": {"reveal": "GSAP power3.out", "scroll": "parallax, pinned reels and scene scaling", "accessibility": "global pause and reduced-motion support"},
+    "density": "editorial cinematic"
+  },
+  "components": {
+    "installed": ["SiteHeader", "HeroFilm", "PageHero", "SectionHeading", "CharacterCard", "EpisodeCard", "YouTubeFacade", "SiteFooter"],
+    "preferredPrimitives": ["Lucide icons", "native video", "privacy-enhanced YouTube facade"],
+    "patterns": ["full-bleed film scenes", "numbered editorial chapters", "contact-sheet character art", "scroll-linked reel"]
+  },
+  "constraints": {
+    "must": [
+      "Use only approved character sheets and supplied film assets",
+      "Keep Kuttappan, Shambhu and Pakru on-model",
+      "Use YouTube as the source of truth for episode metadata",
+      "Keep the primary YouTube action above the fold",
+      "Preserve Malayalam-first storytelling and reduced-motion support"
+    ],
+    "avoid": [
+      "Invented Malayalam or character lore",
+      "Generic SaaS cards, glassmorphism or gradient decoration",
+      "Body marks on Kuttappan or misplaced bracelet on Shambhu",
+      "Mixing Shorts into the long-form episode grid",
+      "Loading YouTube iframes before the visitor clicks"
+    ]
+  },
+  "decisions": [
+    "Monsoon Matinee is the master direction",
+    "The hero plays chase, backwater and golden-hour films in sequence",
+    "The rest of the site behaves like an animated film programme rather than a marketing template",
+    "Primary character cards use model-locked cinematic action portraits generated from the approved reference sheets"
+  ],
+  "evidence": ["Approved concept 11", "Character master sheets", "Generated action portraits", "sample-website-style.mp4", "kuttappan-website-brief.md"],
+  "generatedAt": "2026-08-31T16:10:00+05:30"
+}

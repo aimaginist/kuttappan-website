@@ -1,0 +1,23 @@
+---
+import { ExternalLink, Play } from '@lucide/astro';
+
+type Props = {
+  videoId: string;
+  title: string;
+  thumbnail: string;
+};
+
+const {videoId, title, thumbnail} = Astro.props;
+---
+
+<div class="youtube-facade" data-youtube-facade data-video-id={videoId} data-video-title={title}>
+  <img src={thumbnail} alt={`Video poster for ${title}`} referrerpolicy="no-referrer" />
+  <div class="facade-shade" aria-hidden="true"></div>
+  <button type="button" aria-label={`Play ${title}`}>
+    <Play size={25} fill="currentColor" aria-hidden="true" />
+    <span>Play episode</span>
+  </button>
+  <a href={`https://www.youtube.com/watch?v=${videoId}`} target="_blank" rel="noreferrer">
+    <ExternalLink size={17} aria-hidden="true" /> Open on YouTube
+  </a>
+</div>

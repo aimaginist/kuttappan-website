@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import { Menu, Pause, Play, X } from '@lucide/astro';
+import brandLogo from '../assets/brand/kuttappan-logo.png';
+
+const pathname = Astro.url.pathname;
+const links = [
+  {href: '/episodes', label: 'Episodes'},
+  {href: '/characters', label: 'Characters'},
+  {href: '/world', label: 'Thottumkara'},
+  {href: '/studio', label: 'Studio'},
+  {href: '/press', label: 'Press'},
+];
+---
+
+<header class="site-header" data-site-header>
+  <a class="site-wordmark" href="/" aria-label="Kuttappan home">
+    <Image class="site-logo" src={brandLogo} alt="" width={44} height={44} loading="eager" />
+    <span>Kuttappan</span>
+  </a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    {links.map((link) => (
+      <a href={link.href} aria-current={pathname.startsWith(link.href) ? 'page' : undefined}>{link.label}</a>
+    ))}
+  </nav>
+  <div class="header-actions">
+    <button class="header-icon motion-toggle" type="button" data-motion-toggle aria-label="Pause motion" aria-pressed="false" title="Pause motion">
+      <Pause class="icon-pause" size={18} aria-hidden="true" />
+      <Play class="icon-play" size={18} aria-hidden="true" />
+    </button>
+    <a class="header-youtube" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer">
+      <Play size={18} fill="currentColor" aria-hidden="true" />
+      <span>Watch</span>
+    </a>
+    <button class="header-icon menu-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">
+      <Menu class="icon-menu" size={21} aria-hidden="true" />
+      <X class="icon-close" size={21} aria-hidden="true" />
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-navigation" data-mobile-nav aria-label="Mobile navigation" hidden>
+    {links.map((link, index) => (
+      <a href={link.href} style={`--nav-index:${index}`} aria-current={pathname.startsWith(link.href) ? 'page' : undefined}>
+        <span>{String(index + 1).padStart(2, '0')}</span>{link.label}
+      </a>
+    ))}
+    <a class="mobile-watch" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer">
+      <Play size={20} fill="currentColor" aria-hidden="true" /> Watch on YouTube
+    </a>
+  </nav>
+</header>

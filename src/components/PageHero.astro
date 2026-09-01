@@ -1,0 +1,32 @@
+---
+import { Play as WatchIcon } from '@lucide/astro';
+
+type Props = {
+  chapter: string;
+  title: string;
+  statement: string;
+  image: string;
+  imageAlt: string;
+  theme?: 'teal' | 'laterite' | 'green' | 'gold';
+  titleMalayalam?: string;
+};
+
+const {chapter, title, statement, image, imageAlt, theme = 'teal', titleMalayalam} = Astro.props;
+---
+
+<section class={`page-hero page-hero-${theme}`} data-page-hero>
+  <div class="page-hero-media" data-parallax="0.1">
+    <img src={image} alt={imageAlt} fetchpriority="high" />
+  </div>
+  <div class="page-hero-shade" aria-hidden="true"></div>
+  <div class="page-hero-copy page-shell">
+    <p class="section-kicker" data-reveal>{chapter}</p>
+    <h1 data-reveal>{title}</h1>
+    {titleMalayalam && <p class="page-hero-malayalam" lang="ml" data-reveal>{titleMalayalam}</p>}
+    <p class="page-hero-statement" data-reveal>{statement}</p>
+    <a class="button button-gold" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer" data-reveal>
+      <WatchIcon size={18} fill="currentColor" aria-hidden="true" /> Watch on YouTube
+    </a>
+  </div>
+  <div class="page-hero-index" aria-hidden="true"><span>{chapter}</span><i></i></div>
+</section>

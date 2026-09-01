@@ -1,0 +1,81 @@
+---
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/600.css';
+import '@fontsource/dm-sans/700.css';
+import '@fontsource/bodoni-moda/500.css';
+import '@fontsource/bodoni-moda/700.css';
+import '@fontsource/manjari/400.css';
+import '@fontsource/manjari/700.css';
+import '../styles/global.css';
+
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+type Props = {
+  title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  ogType?: 'website' | 'video.other';
+  canonicalPath?: string;
+  bodyClass?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+};
+
+const {
+  title = 'Kuttappan | Malayalam 3D Animated Comedy',
+  description = 'Kuttappan is a premium Malayalam 3D animated comedy series set in Thottumkara, a fictional village in 1990s Kerala.',
+  image = '/media/stills/hero-run.webp',
+  imageAlt = 'Kuttappan in Thottumkara, a fictional village in 1990s Kerala.',
+  ogType = 'website',
+  canonicalPath = Astro.url.pathname,
+  bodyClass = '',
+  schema,
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, Astro.site || 'https://kuttappan.in');
+const imageUrl = new URL(image, Astro.site || 'https://kuttappan.in');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102d2b" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Malayalam animation, Malayalam animated comedy, Malayalam 3D animation, Thottumkara, Kerala village comedy, nadan comedy, 90s Kerala nostalgia, Malayali family comedy, malayalam cartoon" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Kuttappan" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="ml_IN" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+    <title>{title}</title>
+    {schema && <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />}
+    <script is:inline>document.documentElement.classList.add('has-js');</script>
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
+    <script>
+      import '../scripts/site-motion';
+    </script>
+  </body>
+</html>

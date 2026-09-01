@@ -1,0 +1,13 @@
+---
+import { Play as WatchIcon } from '@lucide/astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Watch Kuttappan" description="Watch Kuttappan on the official YouTube channel.">
+  <section class="watch-redirect">
+    <p class="section-kicker">Opening YouTube</p>
+    <h1>Watch Kuttappan</h1>
+    <a class="button button-gold" href="https://youtube.com/@kuttappan_ml"><WatchIcon size={18} fill="currentColor" aria-hidden="true" /> Continue to YouTube</a>
+  </section>
+  <script is:inline>window.location.replace('https://youtube.com/@kuttappan_ml');</script>
+</BaseLayout>

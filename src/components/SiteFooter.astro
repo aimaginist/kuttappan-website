@@ -1,0 +1,48 @@
+---
+import { ArrowUpRight, AtSign, ExternalLink, Play as WatchIcon, Users } from '@lucide/astro';
+---
+
+<footer class="site-footer">
+  <div class="footer-marquee" aria-hidden="true">
+    <div>
+      <span>A story from Kerala.</span><i></i><span>A story for the world.</span><i></i>
+      <span>A story from Kerala.</span><i></i><span>A story for the world.</span><i></i>
+    </div>
+  </div>
+  <div class="footer-main page-shell">
+    <div class="footer-title" data-reveal>
+      <p class="section-kicker">Keep the stories moving</p>
+      <h2>See you in<br />Thottumkara.</h2>
+    </div>
+    <a class="circle-link" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer" aria-label="Subscribe to Kuttappan on YouTube">
+      <WatchIcon size={28} fill="currentColor" aria-hidden="true" />
+      <span>Subscribe</span>
+    </a>
+    <div class="footer-columns">
+      <div>
+        <p class="footer-label">Visit</p>
+        <a href="/episodes">Episodes</a>
+        <a href="/characters">Characters</a>
+        <a href="/world">The world</a>
+        <a href="/studio">Studio</a>
+        <a href="/press">Press</a>
+      </div>
+      <div>
+        <p class="footer-label">Follow</p>
+        <a href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer"><WatchIcon size={15} fill="currentColor" aria-hidden="true" /> YouTube</a>
+        <a href="https://www.instagram.com/kuttappan.official" target="_blank" rel="noreferrer"><AtSign size={15} aria-hidden="true" /> Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61573234315135" target="_blank" rel="noreferrer"><Users size={15} aria-hidden="true" /> Facebook</a>
+        <a href="https://beacons.ai/kuttappan.official" target="_blank" rel="noreferrer"><ExternalLink size={15} aria-hidden="true" /> All links</a>
+      </div>
+      <div>
+        <p class="footer-label">Contact</p>
+        <a href="mailto:hello@aimaginist.studio">hello@aimaginist.studio <ArrowUpRight size={14} aria-hidden="true" /></a>
+        <a href="/press">Press kit <ArrowUpRight size={14} aria-hidden="true" /></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom page-shell">
+    <span>© {new Date().getFullYear()} AImaginist Studio</span>
+    <span>Premium Malayalam 3D animation</span>
+  </div>
+</footer>

@@ -1,0 +1,24 @@
+node_modules/
+dist/
+.astro/
+.env
+.DS_Store
+__pycache__/
+*.py[cod]
+.codex/
+.uipro-stale-*/
+clips/
+design-system/
+hero-concepts/
+CHAR_*.png
+sample-website-style.mp4
+
+# Local source-quality film masters; web encodes are committed.
+public/media/video/best-run-kuttappan.mp4
+public/media/video/dog-chase.mp4
+public/media/video/elephant-jump.mp4
+public/media/video/grok-video-0aa17f24-5d3d-47ef-a59e-21e1e5bcd10b (1).mp4
+public/media/video/grok-video-7b8a9e7a-c4c1-4052-aeef-e9a1298a47f5 (1).mp4
+public/media/video/grok-video-928a3dcd-732f-4114-b7a4-aa6c89a911ec (2).mp4
+public/media/video/grok-video-a5786210-809c-4a6f-8a9a-266806c11363 (2).mp4
+public/media/video/the-climax.mp4

@@ -1,0 +1,50 @@
+---
+import { ArrowUpRight, Play as WatchIcon } from '@lucide/astro';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout title="AImaginist Studio | Kuttappan" description="Meet AImaginist Studio, the studio behind the Malayalam 3D animated comedy series Kuttappan." image="/media/stills/hero-run.webp">
+  <PageHero chapter="Chapter 04" title="AImaginist Studio" statement="The studio behind Kuttappan and the cinematic world of Thottumkara." image="/media/stills/hero-run.webp" imageAlt="A cinematic animated forest scene featuring Kuttappan." theme="green" />
+
+  <section class="studio-intro section-pad">
+    <div class="page-shell studio-intro-grid">
+      <SectionHeading index="01" kicker="Behind the frame" title="One human vision. A world built one frame at a time." copy="Kuttappan brings character, performance, environment, light and sound together as a premium Malayalam 3D animated comedy." />
+      <p class="studio-intro-note" data-reveal>A story from Kerala.<br />A story for the world.</p>
+    </div>
+  </section>
+
+  <section class="studio-reel" data-reel>
+    <div class="reel-heading page-shell"><SectionHeading index="02" kicker="The moving parts" title="From character reference to finished scene." light /></div>
+    <div class="reel-track studio-reel-track" data-reel-track>
+      <article class="reel-panel"><img src="/media/stills/jackfruit.webp" alt="Kuttappan character performance in a village scene." loading="lazy" /><div class="reel-caption"><span>01</span><h3>Character</h3><p>On-model design carries every expression.</p></div></article>
+      <article class="reel-panel reel-panel-wide"><video muted loop playsinline preload="none" poster="/media/stills/hero-run.webp" data-scroll-video aria-label="Kuttappan running through a cinematic forest scene"><source src="/media/video/hero-run-web.mp4" type="video/mp4" /></video><div class="reel-caption"><span>02</span><h3>Performance</h3><p>Comedy lives in timing, movement and reaction.</p></div></article>
+      <article class="reel-panel"><img src="/media/stills/backwater.webp" alt="A backwater environment from Thottumkara." loading="lazy" /><div class="reel-caption"><span>03</span><h3>World</h3><p>Kerala is present in the landscape and light.</p></div></article>
+      <article class="reel-panel reel-panel-wide"><video muted loop playsinline preload="none" poster="/media/stills/golden-hour.webp" data-scroll-video aria-label="Golden-hour football scene from Kuttappan"><source src="/media/video/golden-hour-web.mp4" type="video/mp4" /></video><div class="reel-caption"><span>04</span><h3>Finish</h3><p>Light, sound and rhythm complete the scene.</p></div></article>
+    </div>
+  </section>
+
+  <section class="studio-principles section-pad">
+    <div class="page-shell">
+      <SectionHeading index="03" kicker="The standard" title="Cultural specificity is the feature." />
+      <div class="principle-grid">
+        <article data-reveal><span>01</span><h3>Malayalam-first</h3><p>The series begins in its own language and cultural rhythm.</p></article>
+        <article data-reveal><span>02</span><h3>On model</h3><p>Approved character references protect the identity of every performance.</p></article>
+        <article data-reveal><span>03</span><h3>Family comedy</h3><p>Stories made for Malayali families to watch and laugh together.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="studio-contact">
+    <div class="page-shell">
+      <p class="section-kicker" data-reveal>Work, festivals and partnerships</p>
+      <h2 data-reveal>Talk to the studio.</h2>
+      <div data-reveal>
+        <a class="button button-gold" href="mailto:hello@aimaginist.studio">hello@aimaginist.studio <ArrowUpRight size={17} aria-hidden="true" /></a>
+        <a class="button button-ghost-light" href="https://youtube.com/@kuttappan_ml" target="_blank" rel="noreferrer"><WatchIcon size={18} fill="currentColor" aria-hidden="true" /> Watch the series</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import { ArrowUpRight, Play } from '@lucide/astro';
+import type { Episode } from '../lib/episodes';
+import { formatEpisodeDate, formatDuration, splitEpisodeTitle } from '../lib/episodes';
+
+type Props = {
+  episode: Episode;
+  index: number;
+  featured?: boolean;
+};
+
+const {episode, index, featured = false} = Astro.props;
+const title = splitEpisodeTitle(episode.title);
+const duration = formatDuration(episode.duration);
+const href = episode.isShort ? `https://www.youtube.com/watch?v=${episode.videoId}` : `/episodes/${episode.slug}`;
+const external = episode.isShort;
+---
+
+<article class:list={['episode-card', {'episode-card-featured': featured}]} data-reveal>
+  <a class="episode-image" href={href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} aria-label={`${external ? 'Watch' : 'Open'} ${episode.title}`}>
+    <img src={episode.thumbnail} alt={`YouTube thumbnail for ${episode.title}`} loading="lazy" referrerpolicy="no-referrer" />
+    <span class="episode-play" aria-hidden="true"><Play size={19} fill="currentColor" /></span>
+    {duration && <span class="episode-duration">{duration}</span>}
+  </a>
+  <div class="episode-meta">
+    <span>{String(index + 1).padStart(2, '0')}</span>
+    <span>{formatEpisodeDate(episode.publishedAt)}</span>
+  </div>
+  <h3 class:list={[{'malayalam': /[\u0D00-\u0D7F]/.test(title.primary)}]} lang={/[\u0D00-\u0D7F]/.test(title.primary) ? 'ml' : 'en'}>{title.primary}</h3>
+  {title.secondary && <p class="episode-secondary">{title.secondary}</p>}
+  <a class="text-arrow" href={href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined}>{external ? 'Watch clip' : 'View episode'} <ArrowUpRight size={15} aria-hidden="true" /></a>
+</article>
