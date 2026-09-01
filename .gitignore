@@ -10,7 +10,8 @@ __pycache__/
 clips/
 design-system/
 hero-concepts/
-CHAR_*.png
+/CHAR_*.png
+/src/assets/characters/CHAR_*.png
 sample-website-style.mp4
 
 # Local source-quality film masters; web encodes are committed.
